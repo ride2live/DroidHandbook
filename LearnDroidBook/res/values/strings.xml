@@ -6,10 +6,11 @@
     
     <string-array name="java_list_rubrics">
         
-        <item>ООП определения блаьла ьла тут чегойто поменялося tag:OOP</item>
-    	<item>Ключевые слова tag:keywords</item>
+        <item>ООП определения tag:OOP</item>
     	<item>Отношения классов tag:CLASS_RELATIONSHIP</item>
-    	<item>Абстрактный класс, вложенный класс, интерфейс tag:CLASS_TYPES</item>
+    	<item>Абстрактный класс tag:ABSTRACT_CLASS</item>
+    	<item>Вложенный класс tag:INNER_CLASS</item>
+    	<item>Ключевые слова tag:keywords</item>
 
     	
     </string-array>

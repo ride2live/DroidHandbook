@@ -9,12 +9,18 @@ import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements TabChangeListener, ListviewCallback {
 	android.app.ActionBar actionTabsBar;
 	FragmentLeftListview mFragmentLeftListview;
 	FragmentRightText mFragmentRightText;
+	FrameLayout leftFrame;
+	LinearLayout menuOpener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +28,19 @@ public class MainActivity extends Activity implements TabChangeListener, Listvie
         actionTabsBar = getActionBar();
         actionTabsBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         TabsCreator.buildActionBar(actionTabsBar, this);
-		
+        leftFrame = (FrameLayout) findViewById(R.id.containerLeft);
+        menuOpener = (LinearLayout) findViewById(R.id.aaa);
 		//tab1.setTabListener(new MyTabListener(this));
 //		tab2.setTabListener(new MyTabListener(this));
         
-        
+        menuOpener.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				leftFrame.setVisibility(View.VISIBLE);
+			}
+		});
         
     }
     
@@ -66,13 +80,30 @@ public class MainActivity extends Activity implements TabChangeListener, Listvie
 	@Override
 	public void clickedItemWithTag(String tag) {
 		// TODO Auto-generated method stub
+		leftFrame.setVisibility(View.GONE);
+//		FragmentTransaction ft = getFragmentManager().beginTransaction();
+//		ft.remove(mFragmentLeftListview);
+//		ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+		
+		//ft.hide(mFragmentLeftListview);
+	//	ft.commit();
 		if (tag.equals("CLASS_RELATIONSHIP"))
 			mFragmentRightText.changeWebView ("file:///android_asset/class_relationship.html");
 		if (tag.equals("OOP"))
+		{
 			mFragmentRightText.changeWebView ("file:///android_asset/index5.html");
-		if (tag.equals("CLASS_TYPES1"))
-			mFragmentRightText.changeWebView ("file:///android_asset/index5.html");
+			leftFrame.setVisibility(View.VISIBLE);
+		}
+		if (tag.equals("ABSTRACT_CLASS"))
+			mFragmentRightText.changeWebView ("file:///android_asset/abstract.html");
+		if (tag.equals("INNER_CLASS"))
+			mFragmentRightText.changeWebView ("file:///android_asset/inner_classes.html");
 		Log.e("itemTag", tag);
+	}
+	
+	public void openMenu (View V)
+	{
+		leftFrame.setVisibility(View.VISIBLE);
 	}
 
     
