@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LearnDroidBook</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string-array name="java_list_rubrics">
+        
+        <item>ООП определения блаьла ьла тут чегойто поменялося tag:OOP</item>
+    	<item>Ключевые слова tag:keywords</item>
+    	<item>Отношения классов tag:CLASS_RELATIONSHIP</item>
+    	<item>Абстрактный класс, вложенный класс, интерфейс tag:CLASS_TYPES</item>
+
+    	
+    </string-array>
+    <string-array name="java_keywords">
+        <item>static final</item>
+    	<item></item>
+    	
+    </string-array>
+</resources>
