@@ -10,7 +10,7 @@
     	<item>Отношения классов tag:CLASS_RELATIONSHIP</item>
     	<item>Абстрактный класс tag:ABSTRACT_CLASS</item>
     	<item>Вложенный класс tag:INNER_CLASS</item>
-    	<item>Коллекции tag:COLLECTIONS</item>
+    	<item>Коллекции tag:COLLECTIONS_HABR</item>
     	<item>Ключевые слова tag:keywords</item>
 
     	

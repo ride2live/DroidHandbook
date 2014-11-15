@@ -10,14 +10,10 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements TabChangeListener, ListviewCallback {
@@ -125,7 +121,8 @@ public class MainActivity extends Activity implements TabChangeListener, Listvie
 			mFragmentRightText.changeWebView ("file:///android_asset/inner_classes.html");
 		if (tag.equals("COLLECTIONS"))
 			mFragmentRightText.changeWebView ("file:///android_asset/collections_java.html");
-		
+		if (tag.equals("COLLECTIONS_HABR"))
+			mFragmentRightText.changeWebView ("file:///android_asset/collections_java.html");
 		Log.e("itemTag", tag);
 	}
 
