@@ -6,6 +6,12 @@
     android:background="#000000"
     android:orientation="vertical" >
 
+    <Button
+        android:id="@+id/hideButton"
+        android:layout_width="46dp"
+        android:layout_height="28dp"
+        android:background="@android:drawable/ic_input_delete" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

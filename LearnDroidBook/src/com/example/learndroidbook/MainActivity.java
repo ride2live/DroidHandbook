@@ -8,11 +8,16 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements TabChangeListener, ListviewCallback {
@@ -21,6 +26,8 @@ public class MainActivity extends Activity implements TabChangeListener, Listvie
 	FragmentRightText mFragmentRightText;
 	FrameLayout leftFrame;
 	LinearLayout menuOpener;
+	Button hideLeftContainerButton;
+	DrawerLayout navigationDrawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,18 +36,28 @@ public class MainActivity extends Activity implements TabChangeListener, Listvie
         actionTabsBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         TabsCreator.buildActionBar(actionTabsBar, this);
         leftFrame = (FrameLayout) findViewById(R.id.containerLeft);
-        menuOpener = (LinearLayout) findViewById(R.id.aaa);
+        navigationDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        /*menuOpener = (LinearLayout) findViewById(R.id.aaa);
 		//tab1.setTabListener(new MyTabListener(this));
 //		tab2.setTabListener(new MyTabListener(this));
-        
-        menuOpener.setOnClickListener(new OnClickListener() {
+       
+        menuOpener.setOnTouchListener(new OnTouchListener() {
 			
 			@Override
-			public void onClick(View v) {
+			public boolean onTouch(View v, MotionEvent event) {
 				// TODO Auto-generated method stub
 				leftFrame.setVisibility(View.VISIBLE);
+				return false;
 			}
 		});
+//        menuOpener.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				
+//			}
+//		});*/
         
     }
     
@@ -62,13 +79,24 @@ public class MainActivity extends Activity implements TabChangeListener, Listvie
 		switch (position) {
 		case 0:
 			if (mFragmentLeftListview == null)
+			{
 				mFragmentLeftListview = new FragmentLeftListview();
+				FragmentTransaction ft = getFragmentManager().beginTransaction();
+				
+				ft.add(R.id.containerLeft, mFragmentLeftListview);
+				ft.commit();
+			}
+				
 			if (mFragmentRightText == null)
+			{
 				mFragmentRightText = new FragmentRightText();
-			FragmentTransaction ft = getFragmentManager().beginTransaction();
-			ft.add(R.id.containerLeft, mFragmentLeftListview);
-			ft.add(R.id.containerRight, mFragmentRightText);
-			ft.commit();
+				FragmentTransaction ft = getFragmentManager().beginTransaction();
+				
+				ft.add(R.id.containerRight, mFragmentRightText);
+				ft.commit();
+			}
+				
+
 			break;
 
 		default:
@@ -80,31 +108,33 @@ public class MainActivity extends Activity implements TabChangeListener, Listvie
 	@Override
 	public void clickedItemWithTag(String tag) {
 		// TODO Auto-generated method stub
-		leftFrame.setVisibility(View.GONE);
+		//leftFrame.setVisibility(View.GONE);
 //		FragmentTransaction ft = getFragmentManager().beginTransaction();
 //		ft.remove(mFragmentLeftListview);
 //		ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-		
+		navigationDrawerLayout.closeDrawer(leftFrame);
 		//ft.hide(mFragmentLeftListview);
 	//	ft.commit();
 		if (tag.equals("CLASS_RELATIONSHIP"))
 			mFragmentRightText.changeWebView ("file:///android_asset/class_relationship.html");
 		if (tag.equals("OOP"))
-		{
 			mFragmentRightText.changeWebView ("file:///android_asset/index5.html");
-			leftFrame.setVisibility(View.VISIBLE);
-		}
 		if (tag.equals("ABSTRACT_CLASS"))
 			mFragmentRightText.changeWebView ("file:///android_asset/abstract.html");
 		if (tag.equals("INNER_CLASS"))
 			mFragmentRightText.changeWebView ("file:///android_asset/inner_classes.html");
+		if (tag.equals("COLLECTIONS"))
+			mFragmentRightText.changeWebView ("file:///android_asset/collections_java.html");
+		
 		Log.e("itemTag", tag);
 	}
-	
-	public void openMenu (View V)
-	{
-		leftFrame.setVisibility(View.VISIBLE);
+
+	@Override
+	public void hideLeft() {
+		// TODO Auto-generated method stub
+		leftFrame.setVisibility(View.GONE);
 	}
+	
 
     
     

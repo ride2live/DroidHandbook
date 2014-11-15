@@ -5,13 +5,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
 public class FragmentLeftListview extends Fragment {
 	ListView list;
 	ListviewCallback listViewCallBack;
+	private Button hideLeftContainerButton;
 	public FragmentLeftListview() {
 		// TODO Auto-generated constructor stub
 	}
@@ -39,6 +42,16 @@ public class FragmentLeftListview extends Fragment {
 				listViewCallBack.clickedItemWithTag(view.getTag().toString());
 			}
 		} );
+		
+		 hideLeftContainerButton = (Button)getActivity().findViewById(R.id.hideButton);
+	        hideLeftContainerButton.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					listViewCallBack.hideLeft();
+				}
+			});
 		super.onActivityCreated(savedInstanceState);
 	}
 	@Override

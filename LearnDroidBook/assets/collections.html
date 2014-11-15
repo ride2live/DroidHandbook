@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0155)file:///C:/Users/Nolwe/Downloads/DroidoLearnContent/test%20html%20with%20images/%D0%9A%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B2%20Java.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="./collections_files/button.js"></script><script async="" src="./collections_files/button(1).js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="description" content="В статье приведена классификация и функции классов-коллекций в Java.">
+    <meta name="Keywords" content="Java Collections, Коллекции Java, list, collection, set, map, иерархия коллекций в java">
+    
+    <link rel="image_src" href="http://www.quizful.net/res/img/logo.png">
+    <meta name="verify-v1" content="6KfOvLrGm4KgPJB+V2B+ELyBzxjG+LoVhKdUcFXetdc=">
+    <meta name="verify-v1" content="qYSVa9mzpQpfGqnpnzskiw2v73evzB42bGM/wcip0Hg=">
+    <meta name="y_key" content="29ad813d1559a2f3">
+    <meta name="google-site-verification" content="iBH4tJ3rxmGwMxXc6uL-qF4pRUbmBrSlRT_XQbw_4Vs">
+
+    <title>Коллекции в Java</title>
+
+    <style>@import '/res/page.css?96';</style>
+    <script type="text/javascript" src="./collections_files/page.js"></script>
+    
+
+    <script>
+        //IE6 идет на$#%
+        if ('\v'=='v' && !window.XMLHttpRequest) window.location='/res/no-ie6.html';
+        jQuery(function() { pageInit(); });
+    </script>
+    <link rel="shortcut icon" href="http://www.quizful.net/res/favicon.ico">
+<script src="./collections_files/share.php"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script src="./collections_files/share(1).php"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body data-twttr-rendered="true">
+
+    <div id="header">
+                <a id="logo" title="Онлайн тесты" href="http://www.quizful.net/"></a>
+
+        <div id="top-groups">
+    <iframe src="./collections_files/like.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px; width:90px;" allowtransparency="true"></iframe>
+</div>
+
+<div id="top-popups">
+    <div id="feedback-block">
+        <div class="feedback-block-button closed" onclick="toggleBlock(jQuery.event.fix(event), &#39;#feedback-block&#39;); return false;"></div>
+
+        <div class="content" style="">
+            <div class="corners"><b></b><u></u><i></i></div>
+
+            <form id="feedback" action="">
+                <div class="errors hidden"></div>
+                <textarea id="feedback-text" name="text" class="form-control"></textarea>
+                                    <div class="captcha">
+                        <img class="captcha-img" src="file:///C:/captcha/feedback?0.04099906515330076&refresh" style="cursor:pointer;">
+                        <label for="feedback-code">Введите число</label>
+                        <input id="feedback-code" type="text" name="captcha">
+                    </div>
+                                <div class="buttons"><input type="button" value="Отправить" class="btn btn-primary btn-xs"></div>
+            </form>
+        </div>
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+    new Feedback();
+    $(document).bind('click', handleClickOutside);
+
+    function handleClickOutside(e) {
+        var blocks = ['#feedback-block', '#invite-block'];
+        for (var id in blocks) {
+            var blockEl = jQuery(blocks[id] + " .content");
+
+            if (jQuery.find(blocks[id]).length > 0 && blockEl.attr('display') != 'none') {
+                if (jQuery(e.target).parents().index(jQuery(blocks[id])) == -1 && !jQuery(e.target).parent().hasClass('thanks')
+                        && jQuery(e.target).attr('id') != blocks[id].substring(1)) {
+
+//                    alert(jQuery(e.target).parents().map(function() { return this.tagName + " id=" + this.id; }).get().join());
+
+                    blockEl.slideUp(250);
+                    jQuery((blocks[id] + '-button').replace('#', '.')).removeClass('opened').addClass('closed');
+                }
+            }
+        }
+    }
+
+    function toggleBlock(e, block) {
+        if (jQuery(e.target).hasClass('opened')) {
+            jQuery(block + ' .content').slideUp(250);
+            jQuery(e.target).removeClass('opened').addClass('closed');
+        } else {
+            jQuery(e.target).removeClass('closed').addClass('opened');
+            jQuery(block + ' .content').slideDown(250);
+        }
+    }
+</script>
+
+        <ul id="navigation">
+                                    <li class="
+            first                         ">
+                <b></b><a href="http://www.quizful.net/test">Главная</a>
+                            </li>
+            <li class="sep"></li>
+                                                                        <li class="
+                                                                                                                                                                                                                                                                                                                ">
+                <a href="http://www.quizful.net/posts">Статьи</a>
+                            </li>
+            <li class="sep"></li>
+                                                                        <li class="last">
+                <a href="http://www.quizful.net/page/about">О проекте</a><b></b><b></b>
+                                    <ul class="sub">
+                                                <li class="" style="width: 1807px;">
+                            <a href="http://www.quizful.net/page/about">описание</a>
+                        </li>
+                                                <li class="" style="width: 1807px;">
+                            <a href="http://www.quizful.net/page/hall-of-fame">зал славы</a>
+                        </li>
+                                                <li class="" style="width: 1807px;">
+                            <a href="http://www.quizful.net/page/certification-exams">сертификаты</a>
+                        </li>
+                                                <li class="" style="width: 1807px;">
+                            <a href="http://www.quizful.net/faq">faq</a>
+                        </li>
+                                                <li class="last" style="width: 1807px;"><b class="left"></b><b class="middle"></b><b class="right"></b></li>
+                    </ul>
+                            </li>
+            
+                                                        </ul>
+
+        <ul id="user-panel">
+            <li> <a href="http://www.quizful.net/LoginAction.loginForm" rel="nofollow">войти</a> </li>
+            <li class="separator"></li>
+                                    <li> <a href="http://www.quizful.net/LoginAction.registration" rel="nofollow">зарегистрироваться</a> </li>
+        </ul>
+
+    </div>
+    <div id="content" style="min-height: 737px;">
+        <div id="contributor"></div>
+        <div id="left">
+                        <div class="a-block">
+                <div class="corners"><s></s><b></b><u></u><i></i></div>
+                <div class="sides"><s></s><b></b><u></u><i></i></div>
+                <div class="content">
+                    Рады приветствовать вас на сервисе <strong>Quizful! </strong><br><br>
+Подготовьте себя к собеседованию, получите новые знания или просто проверьте свои навыки по разным языкам программирования.
+<br>
+<br>
+Понравились тесты? присоединяйтесь к нам на <a href="https://www.facebook.com/Quizful" target="blank"> Facebook</a>
+                </div>
+            </div>
+                        <div id="tips-block" class="sblock opened">
+    <div class="corners"><s></s><b></b><u></u><i></i></div>
+    <div class="title"><b>Знаете ли Вы, что</b></div>
+    <div class="content"><span style="color:red">Ошибка соединения с сервером</span></div>
+</div>
+<script type="text/javascript"> new Tips(); </script>
+
+
+            <div id="contributors" class="sblock">
+    <div class="corners"><s></s><b></b><u></u><i></i></div>
+    <div class="title"><b>Топ контрибуторов</b></div>
+    <div class="content" id="contributors-content"><span style="color:red">Ошибка соединения с сервером</span></div>
+</div>
+<script type="text/javascript">
+    if (!Cookie.get("reportType"))
+        Cookie.set("reportType", "month", 365);
+    $("#contributors-report").val(Cookie.get("reportType"));
+    new TopContributors();
+</script>
+                            <div id="vips" class="sblock">
+    <div class="corners"><s></s><b></b><u></u><i></i></div>
+    <div class="title"><b>Партнеры</b></div>
+    <div class="content">
+        <table class="table" style="background-color: white;">
+                            <tbody><tr class="vip">
+                    <td class="content"><a href="http://skillbox.io/" target="_blank"><img src="./collections_files/banner_prescreening.png" border="0" alt="Рекрутерам: Прескрининг кандидатов"></a></td>
+                    <td>
+                        <img style="vertical-align:middle; padding-right:5px;" alt="about" src="./collections_files/help-tip.gif" data-tooltip="" data-title="Skillbox - инструмент для прескрининга IT специалистов" data-placement="right" data-original-title="" title="">
+                    </td>
+                </tr>
+                            <tr class="vip">
+                    <td class="content"><a href="http://sysiq.com/" target="blank"><img src="./collections_files/sysiq_logo_image.jpg" alt="sysIQ тесты работодателя"></a></td>
+                    <td>
+                        <img style="vertical-align:middle; padding-right:5px;" alt="about" src="./collections_files/help-tip.gif" data-tooltip="" data-title="Компания SysIQ, Inc. специализируется на решениях в области e-commerce для крупных корпоративных клиентов." data-placement="right" data-original-title="" title="">
+                    </td>
+                </tr>
+                            <tr class="vip">
+                    <td class="content"><a href="http://cogniance.com/vacancies/?from=quizful" target="blank"><img src="./collections_files/cogniance_logo_image.png" border="0" alt="Cogniance тесты работодателя"></a></td>
+                    <td>
+                        <img style="vertical-align:middle; padding-right:5px;" alt="about" src="./collections_files/help-tip.gif" data-tooltip="" data-title="Cogniance  — компания, предоставляющая услуги в области проектирования, разработки, тестирования, внедрения и поддержки систем программного обеспечения на международном рынке." data-placement="right" data-original-title="" title="">
+                    </td>
+                </tr>
+                    </tbody></table>
+    </div>
+</div>
+            
+                        <div id="globalfeed" class="sblock">
+    <div class="corners"><s></s><b></b><u></u><i></i></div>
+    <div class="title"><b>Лента обновлений</b></div>
+    <div class="content">
+        <table>
+                            <tbody><tr><td>
+                    <a href="http://www.quizful.net/TestStoreAction.viewQuestion?question=S43T7ygjPiP9#5791618119980378448">ссылка</a>
+                    <span>01:11:22</span>
+                    <div>
+                    Комментарий от enio:<br>Пояснение не корректное. QA automation engineers скорее пиш...
+                </div></td></tr>
+                            <tr class="even"><td>
+                    <a href="http://www.quizful.net/TestStoreAction.viewQuestion?question=OlHlrZTAzTTE#3189835821109476220">ссылка</a>
+                    <span>01:07:04</span>
+                    <div>
+                    Комментарий от enio:<br>Нет, не влияет. Т.к. сервера имеют заведомо многоядерную ар...
+                </div></td></tr>
+                            <tr><td>
+                    <a href="http://www.quizful.net/test/java_se_basic#1115800581011689700">ссылка</a>
+                    <span>Nov 14 23:52</span>
+                    <div>
+                    Комментарий от javarush:<br>ОГРОМНЕЙШЕЕ СПАСИБО ksp107 !!! Молодец!
+                </div></td></tr>
+                            <tr class="even"><td>
+                    <a href="http://www.quizful.net/TestStoreAction.viewQuestion?question=za9sF4FQwIuj#8144822028429513086">ссылка</a>
+                    <span>Nov 14 21:51</span>
+                    <div>
+                    Комментарий от skintiyan:<br>а в чем, собственно, вопрос?
+                </div></td></tr>
+                            <tr><td>
+                    <a href="http://www.quizful.net/TestStoreAction.viewQuestion?question=za9sF4FQwIuj#176742828907427319">ссылка</a>
+                    <span>Nov 14 21:46</span>
+                    <div>
+                    Комментарий от Kufeir:<br>gcc 4.2.1 всеравно на строку " int* array = new int[10]; ...
+                </div></td></tr>
+                    </tbody></table>
+    </div>
+</div>
+
+                        <div id="statistics" class="sblock">
+                <div class="corners"><s></s><b></b><u></u><i></i></div>
+                <div class="title"><b>Статистика</b></div>
+                <div class="content">
+                    <p>Тестов: 151, вопросов: 7967.
+                    Пройдено: 230013 / 1054523.</p>
+                </div>
+            </div>
+                    </div>
+        <div id="middle">
+            <div id="page-title-hr"></div>
+            <script type="text/javascript" src="./collections_files/share.js" charset="windows-1251"></script>
+
+<h1 id="page-title" style="height:auto;">Коллекции в Java</h1>
+        <div class="post">
+    <div id="post-info" class="rform">
+        <div class="corners"><s></s><b></b><u></u><i></i></div>
+        <div class="title">
+            <img class="head" src="./collections_files/blank.gif" alt="head">
+            <img class="tail" src="./collections_files/blank.gif" alt="tail">
+            <b>Статья</b>
+        </div>
+        <div class="content">
+            <table>
+                                <tbody><tr class="even category"><td colspan="2"><span>категория</span><br><a href="http://www.quizful.net/category/java">Java</a></td></tr>
+                                <tr><td>дата</td><td>27.06.2013</td></tr>
+                <tr class="even"><td>автор</td><td><a href="http://www.quizful.net/user/vovanok">vovanok</a></td></tr>
+                <tr><td>голосов</td><td id="votes">84</td></tr>
+            </tbody></table>
+        </div>
+    </div>
+
+    <div class="text" style="margin-right:260px;">
+        <p>
+
+<em>Алгоритмы + Структуры данных = Программы.<br>Никлаус Вирт.</em></p><h2><br>Введение</h2><p>При написании программы очень часто возникает потребность хранить набор каких-либо объектов. Это могут быть числа, строки, объекты пользовательских классов и т.п. В данной статье я постараюсь классифицировать и описать основные классы коллекций простым языком.</p><div align="center"><img style="margin: 0px; border: 0px solid currentColor; width: 362px; height: 288px;" alt="1" src="./collections_files/1_500.jpg" height="407" width="408"></div><br><br><p>У некоторых читателей может возникнуть вопрос: зачем нам коллекции, если у нас есть массивы ? В самом деле, многие используют коллекции там где нужно и не нужно. Но бывают ситуации, когда необходимо например динамическое изменение размера структуры данных, или автоматическое упорядочение структуры данных по мере добавления элементов и т.п.</p><p>В данной статье речь пойдет именно о <strong>Java Collections Framework</strong>, так как существуют многочисленные альтернативы:<br>1. <strong>Guava</strong>(Google Collections Library) - Библиотека добавляет несколько полезных реализаций структур данных, таких как мультимножество, мультиотображение и двунаправленное отображение. Улучшена эффективность.<br>2. <strong>Trove library</strong> - Реализация коллекций, позволяющая хранить примитивы (в Java Collections Framework примитивы хранить нельзя, только оберточные типы), что позволяет повысить эффективность работы.<br>3. <strong>PCJ</strong>(Primitive Collections for Java) - так же как и Trove предназначены для примитивных типов, что позволит повысить эффективность.<br>4. Наконец Вы сами можете написать собственную коллекцию (тот же связной список). Но данный подход не рекомендуется :)</p><p>Как видим, выбрать есть из чего. Но для начала необходимо освоить базовые коллекции Java которыми пользуются чаще всего. А так же некоторые сторонние библиотеки реализуют интерфейсы <strong>Java Collections Framework</strong> (пример Guava <a href="http://guava-libraries.googlecode.com/svn/tags/release05/javadoc/overview-tree.html">http://guava-libraries.googlecode.com/svn/tags/release05/javadoc/overview-tree.html</a>). То есть знание иерархии классов базовых коллекций позволит более быстро освоить сторонние библиотеки.</p><h2><br>Базовые интерфейсы</h2><p>В библиотеке коллекций Java существует два базовых интерфейса, реализации которых и представляют совокупность всех классов коллекций:</p><p>1. <strong>Collection </strong>- коллекция содержит набор объектов (элементов). Здесь определены основные методы для манипуляции с данными, такие как вставка (add, addAll), удаление (<em>remove, removeAll, clear</em>), поиск (<em>contains</em>)<br>2. <strong>Map </strong>-&nbsp; описывает коллекцию, состоящую из пар "ключ — значение". У каждого ключа только одно значение, что соответствует математическому понятию однозначной функции или отображения (тар). Такую коллекцию часто называют еще словарем (dictionary) или ассоциативным массивом (associative array). Никак НЕ относится к интерфейсу Collection и является самостоятельным. </p><p>Хотя фреймворк называется <strong>Java Collections Framework</strong>, интерфейс <strong>map </strong>и его реализации <strong>входят </strong>в фреймворк тоже !<br>Интерфейсы Collection и Map являются базовыми, но они не есть единственными. Их расширяют другие интерфейсы, добавляющие дополнительный функционал. О них мы ещё поговорим.</p><h2><br>Интерфейс Collection</h2><p>Давайте рассмотрим основные интерфейсы, относящиеся к <strong>Collection</strong>:</p><div align="center"><img style="margin: 0px; border: 0px solid currentColor;" alt="2" src="./collections_files/2.png"></div><br><br><p>Как видно с диаграммы, интерфейс <strong>Collection </strong>не является базовым (какая интрига :D). Интерфейс <strong>Collection </strong>расширяет интерфейс <strong>Iterable</strong>, у которого есть только один метод iterator(). Это значит что любая коллекция, которая есть наследником <strong>Iterable </strong>должна возвращать итератор.</p><p><strong>Итератор</strong>(<a href="http://ru.wikipedia.org/wiki/%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80">http://ru.wikipedia.org/wiki/%D0%98%D1%82%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80</a>) -&nbsp;&nbsp; объект, абстрагирующийся за единым интерфейсом доступ к элементам коллекции. Итератор это паттерн позволяющий получить доступ к элементам любой коллекции без вникания в суть ее реализации.</p><p>Идем дальше. Как видим с рисунка, интерфейс <strong>Collection </strong>расширяют интерфейсы <strong>List, Set </strong>и <strong>Queue</strong>. Давайте рассмотрим, зачем нужен каждый.<br>&nbsp; &nbsp; 1. <strong>List </strong>- Представляет собой неупорядоченную коллекцию, в которой допустимы дублирующие значения. Иногда их называют последовательностями (sequence ). Элементы такой коллекции пронумерованы, начиная от нуля, к ним можно обратиться по индексу. <br>&nbsp; &nbsp; 2. <strong>Set </strong>- описывает неупорядоченную коллекцию, не содержащую повторяющихся элементов. Это соответствует математическому понятию множества (set).<br>&nbsp; &nbsp; 3. <strong>Queue </strong>- очередь. Сразу запоминаем как правильно произносится: Queue - КЬЮ (<a href="http://www.youtube.com/watch?feature=player_embedded&v=ugauQ769kVc#at=22">http://www.youtube.com/watch?feature=player_embedded&amp;v=ugauQ769kVc#at=22</a> ). Это коллекция, предназначенная для хранения элементов в порядке, нужном для их обработки. В дополнение к базовым операциям интерфейса Collection, очередь предоставляет дополнительные операции вставки, получения и контроля.</p><h2><br>Реализации интерфейса List</h2><p>Сразу смотрим на иерархию классов.</p><div align="center"><img style="margin: 0px; border: 0px solid currentColor;" alt="3" src="./collections_files/3.png"></div><br><br><p><em>Красным здесь выделены интерфейсы, зеленым - абстрактные классы, а синим готовые реализации. Сразу хочу заметить что здесь не вся иерархия, а только основная её часть.</em></p><p>Как видим на рисунке, между интерфейсом и конкретной реализацией коллекции существует несколько абстрактных классов. Это сделано для того, что бы вынести общий функционал в абстрактный класс, таким образом реализовать повторное использование кода.</p><p><strong>ArrayList </strong>- пожалуй самая часто используемая коллекция. ArrayList инкапсулирует в себе обычный массив, длина которого автоматически увеличивается при добавлении новых элементов.<br>Так как ArrayList использует массив, то&nbsp; время доступа к элементу по индексу минимально (В отличии от LinkedList). При удалении произвольного элемента из списка, все элементы находящиеся «правее» смещаются на одну ячейку влево, при этом реальный размер массива (его емкость, capacity) не изменяется. Если при добавлении элемента, оказывается, что массив полностью заполнен, будет создан новый массив размером (n * 3) / 2 + 1, в него будут помещены все элементы из старого массива + новый, добавляемый элемент.</p><p><strong>LinkedList </strong>- Двусвязный список. Это структура данных, состоящая из узлов, каждый из которых содержит как собственно данные, так и&nbsp; две ссылки («связки») на следующий и предыдущий узел списка. Доступ к произвольному элементу осуществляется за линейное время (но доступ к первому и последнему элементу списка всегда осуществляется за константное время — ссылки постоянно хранятся на первый и последний, так что добавление элемента в конец списка вовсе не значит, что придется перебирать весь список в поисках последнего элемента). В целом же, LinkedList в абсолютных величинах проигрывает ArrayList и по потребляемой памяти и по скорости выполнения операций.</p><p><em>Часто на собеседованиях спрашивают про отличия ArrayList и LinkedList. И какой когда нужно использовать. См. вопрос собеседования: </em><a href="http://www.quizful.net/interview/java/54AubfnDy6Ti">http://www.quizful.net/interview/java/54AubfnDy6Ti</a></p><h2><br>Реализации интерфейса Set</h2><p>Смотрим следующую диаграмму. Пытаемся вникнуть :)</p><div align="center"><img style="margin: 0px; border: 0px solid currentColor;" alt="4" src="./collections_files/4.png"></div><br><br><p><strong>HashSet </strong>- коллекция, не позволяющая хранить одинаковые объекты(как и любой Set).&nbsp; <strong>HashSet </strong>инкапсулирует в себе объект <strong>HashMap </strong>(то-есть использует для хранения хэш-таблицу).<br>Как большинство читателей, вероятно, знают, хеш-таблица хранит информацию, используя так называемый механизм хеширования, в котором содержимое ключа используется для определения уникального значения, называемого хеш-кодом. Этот хеш-код затем применяется в качестве индекса, с которым ассоциируются данные, доступные по этому ключу. Преобразование ключа в хеш-код выполняется автоматически — вы никогда не увидите самого хеш-кода. Также ваш код не может напрямую индексировать хеш-таблицу. Выгода от хеширования состоит в том, что оно обеспечивает константное время выполнения методов add(), contains(), <strong>remove()</strong> и <strong>size()</strong> , даже для больших наборов.&nbsp; <em><br></em></p><p><em>Если Вы хотите использовать <strong>HashSet</strong> для хранения объектов СВОИХ классов, то вы ДОЛЖНЫ переопределить методы hashCode() и equals()</em>, иначе два логически-одинаковых объекта будут считаться разными, так как при добавлении элемента в коллекцию будет вызываться метод hashCode() класса Object (который скорее-всего вернет разный хэш-код для ваших объектов).<br>Важно отметить, что класс HashSet не гарантирует упорядоченности элементов, поскольку процесс хеширования сам по себе обычно не порождает сортированных наборов. Если вам нужны сортированные наборы, то лучшим выбором может быть другой тип коллекций, такой как класс TreeSet.</p><p><strong>LinkedHashSet </strong>-&nbsp; поддерживает связный список элементов набора в том порядке, в котором они вставлялись. Это позволяет организовать упорядоченную итерацию вставки в набор. То есть, когда идет перебор объекта класса LinkedHashSet с применением итератора, элементы извлекаются в том порядке, в каком они были добавлены.</p><p><strong>TreeSet </strong>- коллекция, которая хранит свои элементы в виде упорядоченного по значениям дерева. TreeSet инкапсулирует в себе TreeMap, который в свою очередь использует сбалансированное бинарное красно-черное дерево для хранения элементов. TreeSet хорош тем, что для операций add, remove и contains потребуется гарантированное время log(n).</p><h2><br>Реализации интерфейса Queue</h2><p>Здесь я привел очень упрощенную иерархию.</p><div align="center"><img style="margin: 0px; border: 0px solid currentColor;" alt="5" src="./collections_files/5.png"></div><br><br><p><strong>PriorityQueue </strong>- единственная прямая реализация интерфейса <strong>Queue</strong> (не считая <strong>LinkedList</strong>, который больше является списком, чем очередью).<br>Эта очередь упорядочивает элементы либо по их натуральному порядку (используя интерфейс <strong>Comparable</strong>), либо с помощью интерфейса <strong>Comparator</strong>, полученному в конструкторе.</p><h2><br>Реализации интерфейса Map</h2><p>Интерфейс <strong>Map </strong>соотносит уникальные ключи со значениями. Ключ — это объект, который вы используете для последующего извлечения данных. Задавая ключ и значение, вы можете помещать значения в объект карты. После того как это значение сохранено, вы можете получить его по ключу. Интерфейс <strong>Map </strong>— это обобщенный интерфейс, объявленный так, как показано ниже.</p><p>interface Мар&lt;К, V&gt;</p><p>Здесь К указывает тип ключей, а V — тип хранимых значений.</p><p>Иерархия классов очень похожа на иерархию Set'а:</p><div align="center"><img style="margin: 0px; border: 0px solid currentColor;" alt="6" src="./collections_files/6.png"></div><br><br><p><strong>HashMap </strong>— основан на хэш-таблицах, реализует интерфейс Map (что подразумевает хранение данных в виде пар ключ/значение). Ключи и значения могут быть любых типов, в том числе и null. Данная реализация не дает гарантий относительно порядка элементов с течением времени. Хорошая статья <a href="http://habrahabr.ru/post/128017/">http://habrahabr.ru/post/128017/</a></p><p><strong>LinkedHashMap </strong>-&nbsp; расширяет класс <strong>HashMap</strong>. Он создает связный список элементов в карте, расположенных в том порядке, в котором они вставлялись. Это позволяет организовать перебор карты в порядке вставки. То есть, когда происходит итерация по коллекционному представлению объекта класса LinkedHashMap, элементы будут возвращаться в том порядке, в котором они вставлялись. Вы также можете создать объект класса LinkedHashMap, возвращающий свои элементы в том порядке, в котором к ним в последний раз осуществлялся доступ. <br>Рекомендую так же прочитать <a href="http://habrahabr.ru/post/129037/">http://habrahabr.ru/post/129037/</a></p><p><strong>TreeMap </strong>- расширяет класс <strong>AbstractMap </strong>и реализует интерфейс <strong>NavigatebleMap</strong>. Он создает коллекцию, которая для хранения элементов применяет <em>дерево</em>. <em>Объекты сохраняются в отсортированном порядке по возрастанию</em>. Время доступа и извлечения элементов достаточно мало, что делает класс TreeMap блестящим выбором для хранения больших объемов отсортированной информации, которая должна быть быстро найдена.<br>Моя статья про TreeMap <a href="http://www.quizful.net/post/Java-TreeMap">http://www.quizful.net/post/Java-TreeMap</a></p><p><strong>WeakHashMap </strong>- коллекция, использующая слабые ссылки для ключей (а не значений). Слабая ссылка<em> (англ. weak reference)</em> — специфический вид ссылок на динамически создаваемые объекты в системах со сборкой мусора. Отличается от обычных ссылок тем, что не учитывается сборщиком мусора при выявлении объектов, подлежащих удалению. Ссылки, не являющиеся слабыми, также иногда именуют «сильными».<br><a href="http://ru.wikipedia.org/wiki/%D0%A1%D0%BB%D0%B0%D0%B1%D0%B0%D1%8F_%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B0">http://ru.wikipedia.org/wiki/%D0%A1%D0%BB%D0%B0%D0%B1%D0%B0%D1%8F_%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B0</a></p><h2><br>Устаревшие коллекции</h2><p>Следующие коллекции являются устаревшими, и их использование не рекомендуется, но не запрещается.</p><p>1. <strong>Enumeration </strong>— аналог интерфейса Iterator.<br>&nbsp;<br>2. <strong>Vector </strong>— аналог класса ArrayList; поддерживает упорядоченный список&nbsp;элементов, хранимых во "внутреннем" массиве.<br>&nbsp;<br>3. <strong>Stack </strong>— класс,&nbsp; производный от Vector,&nbsp; в который добавлены методы вталкивания (push) и выталкивания (pop) элементов,&nbsp; так что список&nbsp;может трактоваться в терминах, принятых для описания структуры данных стека (stack).<br>&nbsp;<br>4. <strong>Dictionary </strong>— аналог интерфейса Map, хотя представляет собой абстрактный класс, а не интерфейс.<br>&nbsp;<br>5. <strong>Hashtable </strong>— аналог HashMap.</p><p>Все методы Hashtable, Stack, Vector являются синхронизированными, что делает их менее эффективными в одно поточных приложениях.</p><h2><br>Синхронизированные коллекции</h2><p>Получить синхронизированные объекты коллекций можно с помощью статических методов <strong>synchronizedMap </strong>и <strong>synchronizedList </strong>класса <strong>Collections</strong>.</p><p>&nbsp; <em>Map m = Collections.synchronizedMap(new HashMap());<br>&nbsp; List l = Collections.synchronizedList(new ArrayList());</em><br>&nbsp; <br>Синхронизированные обрамления коллекций synchronizedMap и synchronizedList иногда называют условно потоко безопасными - все операции в отдельности потоко безопасны, но последовательности операций, где управляющий поток зависит от результатов предыдущих операций, могут быть причиной конкуренции за данные. <br>(источник <a href="http://www.ibm.com/developerworks/ru/library/j-jtp07233/">http://www.ibm.com/developerworks/ru/library/j-jtp07233/</a>)<br>Условная безопасность потоков, обеспечиваемая synchronizedList и synchronizedMap представляет скрытую угрозу - разработчики полагают, что, раз эти коллекции синхронизированы, значит, они полностью потоко безопасны, и пренебрегают должной синхронизацией составных операций. В результате, хотя эти программы и работают при лёгкой нагрузке, но при серьёзной нагрузке они могут начать выкидывать NullPointerException или ConcurrentModificationException.</p><p>Кроме того всегда существует возможность "классической" синхронизации с помощью блока synchronized.</p><h2><br>Собираем все воедино</h2><p>Итак, смотрим на получившейся диаграмму классов:</p><div align="center"><img style="margin: 0px; border: 0px solid currentColor;" alt="7" src="./collections_files/7.png"></div><br>Рис 7<br>Большая картинка: <a href="http://piccy.info/view3/4760074/fd5ec046ce4336b8003475b57e56e02b/">http://piccy.info/view3/4760074/fd5ec046ce4336b8003475b57e56e02b/</a><p>Как видим диаграмма достаточно массивная. Но такая архитектура считается эталонной в OOП.</p><h2><br>Заключение</h2><p>Надеюсь эта статья была вам полезной. Если в комментариях наберётся достаточно пожеланий, я напишу вторую часть статьи, где приведу примеры использования всех этих коллекций. (Представьте только: на собеседовании вас спрашивают про иерархию коллекций в java, а Вы им рисуете предыдущий рисунок. Как они будут удивлены :D)<br><strong><em>Спасибо за внимание !!!</em></strong><br></p>
+<p>Также для закрепления знаний рекомендую пройти тесты:<br>
+<a href="http://www.quizful.net/test/java_se_basic">Тест знаний Java - Основы</a><br>
+<a href="http://www.quizful.net/test/java_se_midlevel">Тест знаний Java - Средний уровень</a><br>
+</p>
+    </div>
+    <div class="vote" id="votePost">
+                <p>Если Вам понравилась статья, проголосуйте за нее</p>
+        <a id="showVoters" href="http://www.quizful.net/post/Java-Collections#">Голосов</a>: <span>84</span>
+        <button class="btn btn-default btn-xs">Голосовать</button> &nbsp;<img src="./collections_files/loading(1).gif" align="absmiddle" alt="loading..." style="display:none;">
+        <script type="text/javascript">
+                        $("#votePost button").click(function() {
+                location.replace("/LoginAction.forbidden");
+                return false;
+            });
+                    </script>
+            </div>
+    <script type="text/javascript">
+        $("#showVoters").on("click", function() {
+            var voters = $("#voters");
+            voters.stop(true, true);
+            voters.slideToggle();
+            voters.toggleClass("closed").toggleClass("opened");
+            return false;
+        });
+    </script>
+    <div id="voters" class="closed">
+                <nobr><img height="24" src="./collections_files/nagibator000" align="absmiddle"> nagibator000</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/AlexVovolka" align="absmiddle"> AlexVovolka</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/fdman" align="absmiddle"> fdman</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/fdk512" align="absmiddle"> fdk512</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/eqlbin" align="absmiddle"> eqlbin</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/vituska" align="absmiddle"> vituska</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/aornos" align="absmiddle"> aornos</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/dezmond" align="absmiddle"> <a href="http://www.quizful.net/user/dezmond">dezmond</a></nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Santjaga" align="absmiddle"> Santjaga</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Geniy" align="absmiddle"> Geniy</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/solodancer" align="absmiddle"> <a href="http://www.quizful.net/user/solodancer">solodancer</a></nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/murdoc" align="absmiddle"> murdoc</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/alexbelov" align="absmiddle"> alexbelov</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/javamaniac" align="absmiddle"> javamaniac</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/baxxabit" align="absmiddle"> baxxabit</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/SichikUA" align="absmiddle"> SichikUA</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/RaggaJungler" align="absmiddle"> RaggaJungler</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/gurn" align="absmiddle"> gurn</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/fiery" align="absmiddle"> fiery</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/KirMeth" align="absmiddle"> KirMeth</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/andrey_z91h" align="absmiddle"> andrey_z91h</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/q1nt" align="absmiddle"> q1nt</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/lonely" align="absmiddle"> lonely</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/vovnet" align="absmiddle"> vovnet</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/AlexeyGorovoy" align="absmiddle"> <a href="http://www.quizful.net/user/AlexeyGorovoy">AlexeyGorovoy</a></nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Akoemov" align="absmiddle"> <a href="http://www.quizful.net/user/Akoemov">Akoemov</a></nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/feardude" align="absmiddle"> feardude</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Alena1991" align="absmiddle"> Alena1991</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/orion07" align="absmiddle"> orion07</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Iggor" align="absmiddle"> Iggor</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/alyonka" align="absmiddle"> alyonka</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Master_C" align="absmiddle"> Master_C</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/m_alex" align="absmiddle"> m_alex</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Chupacabra" align="absmiddle"> Chupacabra</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/nara" align="absmiddle"> nara</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Mor94ok" align="absmiddle"> Mor94ok</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/bodiaQuiz" align="absmiddle"> bodiaQuiz</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/lula" align="absmiddle"> lula</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Drevniy" align="absmiddle"> Drevniy</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Andrew_2212" align="absmiddle"> Andrew_2212</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/apple_ua" align="absmiddle"> apple_ua</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/DanikG" align="absmiddle"> DanikG</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/tsupryk" align="absmiddle"> tsupryk</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/panser" align="absmiddle"> <a href="http://www.quizful.net/user/panser">panser</a></nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Letos" align="absmiddle"> Letos</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/ira010191" align="absmiddle"> ira010191</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/paulart" align="absmiddle"> paulart</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Amagister" align="absmiddle"> Amagister</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/lano4ka" align="absmiddle"> lano4ka</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Darwind_" align="absmiddle"> Darwind_</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/GrygorenkoRoman" align="absmiddle"> GrygorenkoRoman</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/nick_kryloff" align="absmiddle"> nick_kryloff</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/DarkTror" align="absmiddle"> DarkTror</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Andrey_G" align="absmiddle"> Andrey_G</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/uMax" align="absmiddle"> uMax</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/RAMmmZES" align="absmiddle"> RAMmmZES</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/jaros" align="absmiddle"> jaros</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/visel_chak" align="absmiddle"> visel_chak</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/zv090471dvv" align="absmiddle"> zv090471dvv</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/ThunderSun" align="absmiddle"> ThunderSun</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/dydus0x14" align="absmiddle"> dydus0x14</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/MarianaSemesta" align="absmiddle"> MarianaSemesta</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/ProSStoKvaWa" align="absmiddle"> ProSStoKvaWa</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/mzilenas" align="absmiddle"> mzilenas</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/lUperr" align="absmiddle"> lUperr</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/artur_mkr" align="absmiddle"> artur_mkr</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Werder" align="absmiddle"> Werder</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/alexgiant" align="absmiddle"> <a href="http://www.quizful.net/user/alexgiant">alexgiant</a></nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Maxanzh" align="absmiddle"> Maxanzh</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/mzhuk" align="absmiddle"> mzhuk</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/TeaWitch" align="absmiddle"> TeaWitch</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/AnnPalmir" align="absmiddle"> AnnPalmir</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/firus" align="absmiddle"> firus</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Dmitry_Maronov" align="absmiddle"> Dmitry_Maronov</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/fdk256" align="absmiddle"> fdk256</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/artamerh" align="absmiddle"> artamerh</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Tryhanuch" align="absmiddle"> Tryhanuch</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Partizanin" align="absmiddle"> Partizanin</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/damian" align="absmiddle"> damian</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/doom111" align="absmiddle"> doom111</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/eskater" align="absmiddle"> eskater</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Demonian" align="absmiddle"> Demonian</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/GreG" align="absmiddle"> GreG</nobr>&nbsp;&nbsp;
+                <nobr><img height="24" src="./collections_files/Orange_Juice" align="absmiddle"> Orange_Juice</nobr>&nbsp;&nbsp;
+            </div>
+</div>
+<div style="margin-top:15px;" id="shareThis"><table cellspacing="0" cellpadding="0" id="vkshare0" onmouseover="VK.Share.change(1, 0);" onmouseout="VK.Share.change(0, 0);" onmousedown="VK.Share.change(2, 0);" onmouseup="VK.Share.change(1, 0);" style="position: relative; width: auto; cursor: pointer; border: 0px;"><tbody><tr style="line-height: normal;"><td style="vertical-align: middle;"><a href="http://vk.com/share.php?url=http%3A%2F%2Fwww.quizful.net%2Fpost%2FJava-Collections" onmouseup="this._btn=event.button;this.blur();" onclick="return VK.Share.click(0, this);" style="border: none;background: #5F83AA;-webkit-border-radius: 2px 0px 0px 2px;-moz-border-radius: 2px 0px 0px 2px;border-radius: 2px 0px 0px 2px;display:block;text-decoration: none;padding: 3px 3px 3px 6px;color: #FFFFFF;font-family: tahoma, arial;height: 15px;line-height:15px;font-size: 10px;text-shadow: none;">Поделиться<div class="float:right"></div></a></td><td style="vertical-align: middle;"><a href="http://vk.com/share.php?url=http%3A%2F%2Fwww.quizful.net%2Fpost%2FJava-Collections" onmouseup="this._btn=event.button;this.blur();" onclick="return VK.Share.click(0, this);" style="border: none;background: #5F83AA;-webkit-border-radius: 0px 2px 2px 0px;-moz-border-radius: 0px 2px 2px 0px;border-radius: 0px 2px 2px 0px;display:block; padding: 3px;"><div style="background: url(&#39;//vk.com/images/icons/share_logo.png&#39;) 0px 0px no-repeat; background-size: 16px 31px; width: 15px;height: 15px;"></div></a></td><td style="vertical-align: middle;"><a href="http://vk.com/share.php?url=http%3A%2F%2Fwww.quizful.net%2Fpost%2FJava-Collections" onmouseup="this._btn=event.button;this.blur();" onclick="return VK.Share.click(0, this);" style="text-decoration: none; font-weight: bold; font-family: tahoma, arial; display: none;"><div style="background: url(&#39;//vk.com/images/icons/share_logo.png&#39;) 0px -24px no-repeat; background-size: 16px 31px; width: 4px; height: 7px;position: absolute; margin: 7px 0px 0px 4px;z-index:100;"></div><div id="vkshare_cnt0" style="border: 1px solid #bbbfc4;background: #FFFFFF;height: 15px;line-height: 15px;5px; padding: 2px 4px;min-width: 12px;margin-left: 7px;border-radius: 2px;-webkit-border-radius: 2px;-moz-border-radius:2px;text-align: center; color: #666c73;font-size: 10px;z-index:99;">14</div></a></td></tr></tbody></table><div class="fb-share-button fb_iframe_widget" data-href="www.quizful.net%2Fpost%2FJava-Collections" data-type="button_count" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;href=file%3A%2F%2F%2FC%3A%2FUsers%2FNolwe%2FDownloads%2FDroidoLearnContent%2Ftest%2520html%2520with%2520images%2Fwww.quizful.net%252Fpost%252FJava-Collections&amp;locale=en_US&amp;sdk=joey&amp;type=button_count"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f30dce87a4" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="./collections_files/share_button.html" style="border: none; visibility: visible; width: 0px; height: 0px;"></iframe></span></div><script src="./collections_files/FB.Share" type="text/javascript"></script><a href="http://www.google.com/buzz/post" class="google-buzz-button" title="Post to Google Buzz" data-url="http://www.quizful.net/post/Java-Collections" data-imageurl="http://quizful.net/res/img/logo.png" data-button-style="small-count"></a><script type="text/javascript" src="./collections_files/button(2).js"></script><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./collections_files/tweet_button.d58098f8a7f0ff5a206e7f15442a6b30.en.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 107px; height: 20px;"></iframe><script type="text/javascript" src="./collections_files/widgets.js"></script><table cellspacing="0" cellpadding="0" id="vkshare0" onmouseover="VK.Share.change(1, 0);" onmouseout="VK.Share.change(0, 0);" onmousedown="VK.Share.change(2, 0);" onmouseup="VK.Share.change(1, 0);" style="position: relative; width: auto; cursor: pointer; border: 0px;"><tbody><tr style="line-height: normal;"><td style="vertical-align: middle;"><a href="http://vk.com/share.php?url=file%3A%2F%2F%2FC%3A%2FUsers%2FNolwe%2FDownloads%2FDroidoLearnContent%2Ftest%2520html%2520with%2520images%2F%25D0%259A%25D0%25BE%25D0%25BB%25D0%25BB%25D0%25B5%25D0%25BA%25D1%2586%25D0%25B8%25D0%25B8%2520%25D0%25B2%2520Java.html" onmouseup="this._btn=event.button;this.blur();" onclick="return VK.Share.click(0, this);" style="border: none;background: #5F83AA;-webkit-border-radius: 2px 0px 0px 2px;-moz-border-radius: 2px 0px 0px 2px;border-radius: 2px 0px 0px 2px;display:block;text-decoration: none;padding: 3px 3px 3px 6px;color: #FFFFFF;font-family: tahoma, arial;height: 15px;line-height:15px;font-size: 10px;text-shadow: none;">Поделиться<div class="float:right"></div></a></td><td style="vertical-align: middle;"><a href="http://vk.com/share.php?url=file%3A%2F%2F%2FC%3A%2FUsers%2FNolwe%2FDownloads%2FDroidoLearnContent%2Ftest%2520html%2520with%2520images%2F%25D0%259A%25D0%25BE%25D0%25BB%25D0%25BB%25D0%25B5%25D0%25BA%25D1%2586%25D0%25B8%25D0%25B8%2520%25D0%25B2%2520Java.html" onmouseup="this._btn=event.button;this.blur();" onclick="return VK.Share.click(0, this);" style="border: none;background: #5F83AA;-webkit-border-radius: 0px 2px 2px 0px;-moz-border-radius: 0px 2px 2px 0px;border-radius: 0px 2px 2px 0px;display:block; padding: 3px;"><div style="background: url(&#39;//vk.com/images/icons/share_logo.png&#39;) 0px 0px no-repeat; background-size: 16px 31px; width: 15px;height: 15px;"></div></a></td><td style="vertical-align: middle;"><a href="http://vk.com/share.php?url=file%3A%2F%2F%2FC%3A%2FUsers%2FNolwe%2FDownloads%2FDroidoLearnContent%2Ftest%2520html%2520with%2520images%2F%25D0%259A%25D0%25BE%25D0%25BB%25D0%25BB%25D0%25B5%25D0%25BA%25D1%2586%25D0%25B8%25D0%25B8%2520%25D0%25B2%2520Java.html" onmouseup="this._btn=event.button;this.blur();" onclick="return VK.Share.click(0, this);" style="text-decoration: none;font-weight:bold;font-family: tahoma, arial;display: none"><div style="background: url(&#39;//vk.com/images/icons/share_logo.png&#39;) 0px -24px no-repeat; background-size: 16px 31px; width: 4px; height: 7px;position: absolute; margin: 7px 0px 0px 4px;z-index:100;"></div><div id="vkshare_cnt0" style="border: 1px solid #bbbfc4;background: #FFFFFF;height: 15px;line-height: 15px;5px; padding: 2px 4px;min-width: 12px;margin-left: 7px;border-radius: 2px;-webkit-border-radius: 2px;-moz-border-radius:2px;text-align: center; color: #666c73;font-size: 10px;z-index:99;">0</div></a></td></tr></tbody></table><div class="fb-share-button fb_iframe_widget" data-href="file%3A%2F%2F%2FC%3A%2FUsers%2FNolwe%2FDownloads%2FDroidoLearnContent%2Ftest%2520html%2520with%2520images%2F%25D0%259A%25D0%25BE%25D0%25BB%25D0%25BB%25D0%25B5%25D0%25BA%25D1%2586%25D0%25B8%25D0%25B8%2520%25D0%25B2%2520Java.html" data-type="button_count" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;href=file%3A%2F%2F%2FC%3A%2FUsers%2FNolwe%2FDownloads%2FDroidoLearnContent%2Ftest%2520html%2520with%2520images%2Ffile%253A%252F%252F%252FC%253A%252FUsers%252FNolwe%252FDownloads%252FDroidoLearnContent%252Ftest%252520html%252520with%252520images%252F%2525D0%25259A%2525D0%2525BE%2525D0%2525BB%2525D0%2525BB%2525D0%2525B5%2525D0%2525BA%2525D1%252586%2525D0%2525B8%2525D0%2525B8%252520%2525D0%2525B2%252520Java.html&amp;locale=en_US&amp;sdk=joey&amp;type=button_count"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe name="f2e92dbddc" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="./collections_files/share_button(1).html" style="border: none; visibility: visible; width: 0px; height: 0px;"></iframe></span></div><script src="./collections_files/FB(1).Share" type="text/javascript"></script><a href="http://www.google.com/buzz/post" class="google-buzz-button" title="Post to Google Buzz" data-url="file:///C:/Users/Nolwe/Downloads/DroidoLearnContent/test%20html%20with%20images/%D0%9A%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B2%20Java.html" data-imageurl="http://quizful.net/res/img/logo.png" data-button-style="small-count"></a><script type="text/javascript" src="./collections_files/button(3).js"></script><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./collections_files/tweet_button.d58098f8a7f0ff5a206e7f15442a6b30.en(1).html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 107px; height: 20px;"></iframe><script type="text/javascript" src="./collections_files/widgets(1).js"></script></div>
+<div id="post-comments"><div class="comments"><div id="comments-top" class="topic-panel"><div class="total">Комментариев: 22</div><a href="" class="order-link">↑</a><a class="refresh-link" href="">обновить</a></div><div class="comment-block" id="7420222915777426251"><div class="head"><a class="link" href="http://www.quizful.net/post/Java-Collections#7420222915777426251">#</a><span class="author"><img src="./collections_files/ProgerGeek" height="24px" style="vertical-align:middle;margin-bottom:4px;"> &nbsp;ProgerGeek</span><span class="created">14.11.2014 | 14:09:21</span></div><div class="text">"HashSet инкапсулирует в себе объект HashMap" - удивился, когда прочел, полез в официальную доку, ничего подобного не нашел, как то странно,как по мне, HashSet через HashMap реализовывать, откуда информация?</div><a class="reply-link" href="">ответить</a><div class="sub-comments"><div class="comment-block" id="364291590928102158"><div class="head"><a class="link" href="http://www.quizful.net/post/Java-Collections#364291590928102158">#</a><span class="author"><img src="./collections_files/vovanok" height="24px" style="vertical-align:middle;margin-bottom:4px;"> &nbsp;<a href="http://www.quizful.net/user/vovanok" rel="nofollow">vovanok</a></span><span class="created">14.11.2014 | 15:15:25</span></div><div class="text">Информация взята из исходного кода :) Смотрите конструктор.</div><a class="reply-link" href="">ответить</a><div class="sub-comments"></div></div></div></div><div class="comment-block" id="7649555325024588100"><div class="head"><a class="link" href="http://www.quizful.net/post/Java-Collections#7649555325024588100">#</a><span class="author"><img src="./collections_files/demigod" height="24px" style="vertical-align:middle;margin-bottom:4px;"> &nbsp;demigod</span><span class="created">10.09.2014 | 15:16:36</span></div><div class="text">"1. List - Представляет собой неупорядоченную коллекцию..." немного не верно. List представляет собой упорядоченную, но не отсортированную коллекцию. Согласитесь - упорядоченность и отсортированность разные вещи. List сохраняет порядок добавления элементов.</div><a class="reply-link" href="">ответить</a><div class="sub-comments"></div></div><div class="comment-block" id="8550316862484890795"><div class="head"><a class="link" href="http://www.quizful.net/post/Java-Collections#8550316862484890795">#</a><span class="author"><img src="./collections_files/mzilenas" height="24px" style="vertical-align:middle;margin-bottom:4px;"> &nbsp;mzilenas</span><span class="created">24.03.2014 | 13:02:53</span></div><div class="text">"TreeMap - расширяет класс AbstractMap и реализует интерфейс NavigatebleMap." а должно буть NavigableMap .</div><a class="reply-link" href="">ответить</a><div class="sub-comments"></div></div><div class="comment-block" id="5463352883065342988"><div class="head"><a class="link" href="http://www.quizful.net/post/Java-Collections#5463352883065342988">#</a><span class="author"><img src="./collections_files/paulart" height="24px" style="vertical-align:middle;margin-bottom:4px;"> &nbsp;paulart</span><span class="created">11.01.2014 | 19:37:16</span></div><div class="text">Спасибо, очень полезные схемы!<br>Попробовал сделать вариант для части схемы, чтобы меньше было пересечений и наглядней структура:<br><a href="http://javeine.blogspot.com/2014/01/public-interface-collection.html">http://javeine.blogspot.com/2014/01/public-interface-collection.html</a></div><a class="reply-link" href="">ответить</a><div class="sub-comments"></div></div><div class="comment-block" id="6407020017786488443"><div class="head"><a class="link" href="http://www.quizful.net/post/Java-Collections#6407020017786488443">#</a><span class="author"><img src="./collections_files/panser" height="24px" style="vertical-align:middle;margin-bottom:4px;"> &nbsp;<a href="http://www.quizful.net/user/panser" rel="nofollow">panser</a></span><span class="created">05.01.2014 | 18:32:24</span></div><div class="text">отличная. за вторую!</div><a class="reply-link" href="">ответить</a><div class="sub-comments"></div></div><div class="comment-block" id="2290574277700465558"><div class="head"><a class="link" href="http://www.quizful.net/post/Java-Collections#2290574277700465558">#</a><span class="author"><img src="./collections_files/miroshnik1993" height="24px" style="vertical-align:middle;margin-bottom:4px;"> &nbsp;miroshnik1993</span><span class="created">11.11.2013 | 04:39:42</span></div><div class="text">Спасибо за статью. Очень хотелось бы вторую часть)</div><a class="reply-link" href="">ответить</a><div class="sub-comments"></div></div><div class="comment-block" id="2620719706732324042"><div class="head"><a class="link" href="http://www.quizful.net/post/Java-Collections#2620719706732324042">#</a><span class="author"><img src="./collections_files/Iggor" height="24px" style="vertical-align:middle;margin-bottom:4px;"> &nbsp;Iggor</span><span class="created">14.10.2013 | 12:13:28</span></div><div class="text">я тоже за 2 часть</div><a class="reply-link" href="">ответить</a><div class="sub-comments"></div></div><div class="comment-block" id="8855586808984080330"><div class="head"><a class="link" href="http://www.quizful.net/post/Java-Collections#8855586808984080330">#</a><span class="author"><img src="./collections_files/DanikG" height="24px" style="vertical-align:middle;margin-bottom:4px;"> &nbsp;DanikG</span><span class="created">30.09.2013 | 22:39:46</span></div><div class="text">Класс!!!) Второй части катастрофически не хватает)</div><a class="reply-link" href="">ответить</a><div class="sub-comments"></div></div><div class="comment-block" id="8189522838806677401"><div class="head"><a class="link" href="http://www.quizful.net/post/Java-Collections#8189522838806677401">#</a><span class="author"><img src="./collections_files/Alena1991" height="24px" style="vertical-align:middle;margin-bottom:4px;"> &nbsp;Alena1991</span><span class="created">12.09.2013 | 18:41:37</span></div><div class="text">Спасибо огромное!<br>Я за вторую часть - обязательно пригодится!</div><a class="reply-link" href="">ответить</a><div class="sub-comments"></div></div><div class="comment-block" id="4191480688522046503"><div class="head"><a class="link" href="http://www.quizful.net/post/Java-Collections#4191480688522046503">#</a><span class="author"><img src="./collections_files/QQred" height="24px" style="vertical-align:middle;margin-bottom:4px;"> &nbsp;QQred</span><span class="created">11.08.2013 | 18:15:50</span></div><div class="text">про concurrency хочу)</div><a class="reply-link" href="">ответить</a><div class="sub-comments"></div></div><div class="page-navigation"><a class="current" href="">1</a><a href="">2</a></div><form class="comment-form"><div class="title">Добавить комментарий</div><div class="errors" style="display: none;"></div><textarea></textarea><div class="buttons"><button>Отправить</button> </div></form></div></div>
+<style>@import '/comments/comments.css?1';</style>
+
+<script src="./collections_files/comments.js"></script>
+<script>document.getElementById('post-comments').appendChild(new Comments.Panel('post/Java-Collections', {onLoad:Markup}));</script>
+
+<script type="text/javascript">
+    ShareThis(jQuery("#shareThis"), window.location, jQuery("title").html(), jQuery('head meta[name=description]').attr('Content'));
+</script>
+            <br class="clear">
+        </div>
+        <br class="clear">
+    </div>
+
+    <div id="footer">
+        <b></b>
+        <a class="forteko" target="_blank" href="http://www.forteko.com/" title="Forteko"></a>
+        
+        <span class="social">
+            <a class="icon-twitter" target="_blank" rel="nofollow" href="http://www.twitter.com/quizful" title="Twitter"></a>
+            <a class="icon-facebook" target="_blank" rel="nofollow" href="http://www.facebook.com/Quizful" title="Facebook"></a>
+            <a class="icon-vkontakte" target="_blank" rel="nofollow" href="http://vkontakte.ru/club8978114" title="VKontakte"></a>
+            <span class="title">Наши представительства</span>
+        </span>
+    </div>
+    <script type="text/javascript">
+    if (window.location.host == 'www.quizful.net') {
+        var pageTracker = _gat._getTracker("UA-199293-2");
+        pageTracker._initData();
+        pageTracker._trackPageview();
+
+        $("#footer .group a").click(function() { pageTracker._trackPageview('/' + this.className); });
+    }
+    </script>
+
+
+<div id="fb-root" class=" fb_reset fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./collections_files/QjK2hWv6uak.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./collections_files/QjK2hWv6uak(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./collections_files/QjK2hWv6uak(2).html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./collections_files/QjK2hWv6uak(3).html" style="border: none;"></iframe></div></div></div></body></html>

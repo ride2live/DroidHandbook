@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<!-- saved from url=(0307)file:///C:/Users/Nolwe/Downloads/DroidoLearnContent/test%20html%20with%20images/collection_habr/Java%20%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.%20%D0%9A%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8%20%20%20%D0%A5%D0%B0%D0%B1%D1%80%D0%B0%D1%85%D0%B0%D0%B1%D1%80.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./collections_java_files/watch.js"></script><script async="" src="file://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="./collections_java_files/watch(1).js"></script><script async="" src="./collections_java_files/analytics(1).js"></script>
+	<meta charset="utf-8">
+	<title>Java собеседование. Коллекции / Хабрахабр</title>
+	<meta content="Dynamic" name="document-state">
+	<meta content="width=device-width,initial-scale=1,user-scalable=no" name="viewport">
+    <link href="http://habrahabr.ru/post/162017/?mobile=no" rel="canonical">
+	<link href="http://m.habrahabr.ru/favicon.ico" rel="icon" type="image/png">
+	<link href="http://m.habrahabr.ru/images/apple-touch-icon_142x142.png" rel="apple-touch-icon" type="image/png">
+
+		<meta property="fb:app_id" content=""> 
+<meta property="og:type" content="article"> 
+<meta property="og:url" content="http://habrahabr.ru/post/162017/"> 
+<meta property="og:title" content="Java собеседование. Коллекции"> 
+	
+	<meta property="og:image" content="http://habrahabr.ru/i/habralogo.jpg">
+	<link rel="image_src" href="http://habrahabr.ru/i/habralogo.jpg">
+<meta property="og:description" content="С недавнего времени у меня появилась настойчивая мысль, что профессиональное развитие сильно замедлилось и это хочется как-то исправить. Да, читаю книги, слушаю...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@habrahabr">
+	<meta property="al:ios:url" content="habrahabr://post/162017">
+<meta property="al:ios:app_store_id" content="778613673">
+<meta property="al:ios:app_name" content="Habrahabr">
+<meta property="al:android:url" content="habrahabr://post/162017">
+<meta property="al:android:app_name" content="Habrahabr">
+<meta property="al:android:package" content="ru.habrahabr">
+<meta property="al:windows_phone:url" content="habrahabr://post/162017">
+<meta property="al:windows_phone:app_name" content="Habrahabr">
+<meta property="al:windows_phone:app_id" content="460a6bd6-8955-470f-935e-9ea1726a6060">
+	<link rel="canonical" href="http://habrahabr.ru/post/162017/">
+
+	
+  <script type="text/javascript" src="./collections_java_files/adriver.core.2.js"></script>
+
+	<link href="http://m.habrahabr.ru/styles/1415954884/assets/global_mobile.css" rel="stylesheet" media="all">
+
+</head>
+<body>
+
+	<div id="layout">
+		
+		<div id="header">
+    <a href="http://m.habrahabr.ru/" class="logo"></a>
+        <div class="title">Java собеседование. Коллекции / Хабрахабр</div>
+    <div class="toggle_sidebar"></div>
+</div>		
+		<div id="content">
+             <div class="banner_header">
+  <!--  AdRiver code START. Type:AjaxJS Site: mhabr PZ: 0 BN: 1 -->
+  <div id="adriver_banner_1463342164" title=""><a href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&ad=470958&bt=21&pid=1673552&bid=3417067&bn=3417067&rnd=977277022" target="_blank"><img src="./collections_java_files/e729aab3b559450ba6576db57d6bf6ab.jpg" alt=""></a></div>
+  <script type="text/javascript">
+    function show_top_banner(image_url, click_url){
+      
+      document.getElementById('adriver_banner_1463342164').innerHTML='<a href="'+click_url+'"  target="_blank"><img src="'+image_url+'" alt=""/></a>';
+    }
+    new adriver("adriver_banner_1463342164", {sid:182054, bt:52, bn:1});
+  </script>
+</div>  
+
+
+ 
+			  <div class="post_show">
+
+      <div class="hubs">
+        <a href="http://m.habrahabr.ru/hub/algorithms/" class="hub">Алгоритмы</a><span class="profiled_hub" title="Профильный хаб">*</span>, 
+        <a href="http://m.habrahabr.ru/hub/java/" class="hub">JAVA</a><span class="profiled_hub" title="Профильный хаб">*</span>
+      </div>
+
+
+    <h3 class="title">
+      
+      Java собеседование. Коллекции
+    </h3>
+
+    
+    
+    
+    
+    
+    <div class="meta">
+      <span class="author">sphinks</span>
+      •
+      <span class="time">11 декабря 2012 в 16:34</span>
+    </div>
+
+    <div class="text text_html" id="post_text">С недавнего времени у меня появилась настойчивая мысль, что профессиональное развитие сильно замедлилось и это хочется как-то исправить. Да, читаю книги, слушаю курсы, но в то же время приходит и понимание того, что возможно пришло время сменить работу, здесь вроде как все изучено, плавно уходим в рутину. Данная мысль сподвигла меня на рассылку своего резюме в несколько компаний — лидеров рынка. После прохождения собеседования в 3 из них, я решил, как водится внести свои 5 копеек в освещение обширной темы собеседования, а именно технических вопросов по Java коллекциям, с которыми приходится сталкиваться. Да, знаю, читатель скажет: «коллекции — избитая тема, сколько можно», но часть из приведенных ниже вопросов, я задавал своим знакомым разработчикам, которые занимают именно позиции разработчиков («крепких середнячков», по меркам недалекой от Москвы глубинки, которые уверенно справляются со своей работой на практике, а вот в теории скажем так есть пробелы, потому, что работа не требует решения каких-то нетривиальных задач, да и потому что не всем это интересно — изучать как внутри работает структура данных), вызывало растерянность. Думаю, что рассмотренный материал будет не очень интересен разработчикам выше уровня Junior (я попрошу их комментировать, дополнять и критиковать изложенный здесь материал), а вот Junior`ы уверен, найдут в этой статье интересное для себя.<br>
+<a name="habracut"></a><br>
+Признаюсь честно, сам при прохождении интервью не знал ответы на некоторые из изложенных ниже вопросов, хотя вроде как уже прошел этап джуниорства. Это вдвойне обидно, с учетом того, что позиции в те компании, где симпатию вызывало все, начиная от общения с HR и заканчивая возможной будущей сферой деятельности не удалось получить оффер и как раз там были вопросы по коллекциям, с которыми я не справился (уверен они внесли свою негативную лепту). А вот там, где все прошло вполне неплохо с точки зрения собеседования, предложенная сфера деятельности и общение в целом с будущими коллегами оставили негатив, так что закон «подлости» во всей красе. В итоге, данным топиком я хочу и в своей голове заполнить обнаруженные пробелы+систематизировать на «бумаге» эти знания.<br>
+<br>
+В статье я рассмотрю не только вопросы, вызвавшие у меня сложности на последних собеседованиях, но и вопросы, которые мне задавали за всю мою практику прохождения собеседований. Ну что ж, думаю пора переходить к вопросам:<br>
+<br>
+<b>1. Чем отличается ArrayList от LinkedList?</b><br>
+<br>
+В моем рейтинге это один из двух самых популярных вопросов о коллекции, задают в 90% случаев. Вызвал у меня проблему на моем первом собеседовании на Junior Developer`а. Вкратце ответ на этот вопрос сводится к следующему: ArrayList это список, реализованный на основе массива, а LinkedList — это классический связный список, основанный на объектах с ссылками между ними. <br>
+<br>
+Преимущества ArrayList: в возможности доступа к произвольному элементу по индексу за постоянное время (так как это массив), минимум накладных расходов при хранении такого списка, вставка в конец списка <u>в среднем</u> производится так же за постоянное время. <u>В среднем</u> потому, что массив имеет определенный начальный размер n (в коде это параметр capacity), по умолчанию n = 10, при записи n+1 элемента, будет создан новый массив размером (n * 3) / 2 + 1, в него будут помещены все элементы из старого массива + новый, добавляемый элемент. В итоге получаем, что при добавлении элемента при необходимости расширения массива, время добавления будет значительно больше, нежели при записи элемента в готовую пустую ячейку. Тем не менее, в среднем время вставки элемента в конец списка является постоянным. Удаление последнего элемента происходит за константное время. Недостатки ArrayList проявляются при вставке/удалении элемента в середине списка — это взывает перезапись всех элементов размещенных «правее» в списке на одну позицию влево, кроме того, при удалении элементов размер массива не уменьшается, до явного вызова метода trimToSize().<br>
+<br>
+LinkedList наоборот, за постоянное время может выполнять вставку/удаление элементов в списке (именно вставку и удаление, поиск позиции вставки и удаления сюда не входит). Доступ к произвольному элементу осуществляется за линейное время (но доступ к первому и последнему элементу списка всегда осуществляется за константное время — ссылки постоянно хранятся на первый и последний, так что добавление элемента в конец списка вовсе не значит, что придется перебирать весь список в поисках последнего элемента). В целом же, LinkedList в абсолютных величинах проигрывает ArrayList и по потребляемой памяти и по скорости выполнения операций. LinkedList предпочтительно применять, когда происходит активная работа (вставка/удаление) с серединой списка или в случаях, когда необходимо гарантированное время добавления элемента в список.<br>
+<br>
+Для углубленного и в то же время экспресс обучения очень рекомендую к прочтению замечательные статьи <a href="http://habrahabr.ru/users/tarzan82/" class="user_link">tarzan82</a> о <a href="http://habrahabr.ru/post/128269/">ArrayList</a> и <a href="http://habrahabr.ru/post/127864/">LinkedList</a>. Так же порекомендую статью от <a href="http://habrahabr.ru/users/lany/" class="user_link">lany</a> о потреблении памяти коллекциями — <a href="http://habrahabr.ru/post/159557/">очень познавательно</a>.<br>
+<br>
+<b>2. Что вы обычно используете (ArrayList или LinkedList)? Почему?</b><br>
+<br>
+Это вопрос является слегка замаскированной версией предыдущего, так как ответ на этот вопрос приведет к постепенному изложению ответа на предыдущей вопрос. В 90% случае ArrayList будет быстрее и экономичнее LinkedList, так что обычно используют ArrayList, но тем не менее всегда есть 10% случаев для LinkedList. Я говорю, что обычно ArrayList использую, ссылаясь на тесты и последний абзац из предыдущего вопроса, но не забываю и про LinkedList (в каких случаях? так же последний абзац предыдущего вопроса помогает).<br>
+<br>
+<b>3. Что быстрее работает ArrayList или LinkedList?</b><br>
+<br>
+Еще одна замаскированная версия первого вопроса. Хитрее приведенных выше вариантов, что постановка вопроса подразумевает односложный ответ с выбором одного из предложенных вариантов, что, по задумке автора вопроса, как я понимаю, должно сразу выявить человека с неглубокими познаниями в collections. Правильным же действием будет встречный вопрос о том, какие действия будут выполняться над структурой. В итоге, диалог плавно переходит к ответу на первый вопрос.<br>
+<br>
+<b>4. Необходимо добавить 1млн. элемент, какую структуру вы используете?</b><br>
+<br>
+Тоже довольно популярная скрытая версия первого вопроса. Так же постановка предполагает выбор одного из предложенных вариантов, хотя на самом деле информации для однозначного выбора нет. Нужно задавать дополнительные вопросы: в какую часть списка происходит добавление элементов? есть ли информация о том, что потом будет происходить с элементами списка? какие то ограничения по памяти или скорости выполнения? В целом, все тот же первый вопрос, но немного с другой стороны: вы через дополнительные вопросы, показываете глубину понимания работы Array и Linked List.<br>
+Однажды я сам «клюнул» на этот крючок, домыслив про себя, что добавить — это «вставить» в конец списка и усиленно продвигал ArrayList, хотя ничего не знал (и не пытался узнать) про дальнейшие действие с этим списком и возможные ограничения.<br>
+<br>
+<b>5. Как происходит удаление элементов из ArrayList? Как меняется в этом случае размер ArrayList?</b><br>
+<br>
+Опять же, ответ на вопрос 1 содержит ответ и на этот вопрос. При удалении произвольного элемента из списка, все элементы находящиеся «правее» смещаются на одну ячейку влево и реальный размер массива (его емкость, capacity) не изменяется никак. Механизм автоматического «расширения» массива существует, а вот автоматического «сжатия» нет, можно только явно выполнить «сжатие» командой trimToSize().<br>
+<br>
+<b>6. Предложите эффективный алгоритм удаления нескольких рядом стоящих элементов из середины списка, реализуемого ArrayList.</b><br>
+<br>
+Неизбитый, по моим меркам вопрос, встречался мне всего однажды, когда я не знал механизма удаления элементов из ArrayList. В итоге вызвал у меня серьезные затруднения. На самом деле все довольно просто и очевидно, когда знаешь как происходит удаление одного элемента. Допустим нужно удалить n элементов с позиции m в списке. Вместо выполнения удаления одного элемента n раз (каждый раз смещая на 1 позицию элементы, стоящие «правее» в списке), нужно выполнить смещение всех элементов, стоящих «правее» n+m позиции на n элементов левее к началу списка. Таким образом, вместо выполнения n итераций перемещения элементов списка, все выполняется за 1 проход.<br>
+<br>
+<b>7. Как устроена HashMap?</b><br>
+<br>
+Это второй из списка самых популярных вопросов по коллекциям. Уж даже не помню был ли случай, когда этот вопрос мне не задавали.<br>
+<br>
+Вкратце, HashMap состоит из «корзин» (bucket`ов). С технической точки зрения «корзины» — это элементы массива, которые хранят ссылки на списки элементов. При добавлении новой пары ключ-значение, вычисляет хеш-код ключа, на основании которого вычисляется номер корзины (номер ячейки массива), в которую попадет новый элемент. Если корзина пустая, то в нее сохраняется ссылка на вновь добавляемый элемент, если же там уже есть элемент, то происходит последовательный переход по ссылкам между элементами в цепочке, в поисках последнего элемента, от которого и ставится ссылка на вновь добавленный элемент. Если в списке был найден элемент с таким же ключом, то он заменяется. Добавление, поиск и удаление элементов выполняется за константное время. Вроде все здорово, с одной оговоркой, хеш-функций должна равномерно распределять элементы по корзинам, в этом случае временная сложность для этих 3 операций будет не ниже lg N, а в среднем случае как раз константное время.<br>
+<br>
+В целом, этого ответа вполне хватит на поставленный вопрос, дальше скорее всего завяжется диалог по HashMap, с углубленным пониманием процессов и тонкостей.<br>
+<br>
+Опять же, рекомендую к прочтению статью <a href="http://habrahabr.ru/users/tarzan82/" class="user_link">tarzan82</a> по <a href="http://habrahabr.ru/post/128017/">HashMap</a>.<br>
+<br>
+<b>8. Какое начальное количество корзин в HashMap?</b><br>
+<br>
+Довольно неожиданный вопрос, опять же меня он когда-то заставил угадывать число корзин при использовании конструктора по умолчанию.<br>
+<br>
+Ответ здесь — 16. Отвечая, стоит заметить, что можно используя конструкторы с параметрами: через параметр capacity задавать свое начальное количество корзин.<br>
+<br>
+<b>9. Какая оценка временной сложности выборки элемента из HashMap? Гарантирует ли HashMap указанную сложность выборки элемента?</b><br>
+<br>
+Ответ на первую часть вопроса, можно найти в ответе на вопрос 7 — константное время необходимо для выборки элемента. Вот на второй части вопроса, я недавно растерялся. И устройство HashMap знал и про хеш-функцию тоже знал, а вот к такому вопросу не был готов, в уме кинулся вообще в другом направлении и сосредоточился на строении HashMap откинув проблему хеш-кода, который в голове всегда привык считать хеш-кодом с равномерным распределением. На самом деле ответ довольно простой и следует из ответа вопроса 7. <br>
+<br>
+Если вы возьмете хеш-функцию, которая постоянно будет возвращать одно и то же значение, то HashMap превратится в связный список, с отвратной производительностью. Затем даже, если вы будете использовать хеш-функцию с равномерным распределением, в предельном случае гарантироваться будет только временная сложность lg N. Так что, ответ на вторую часть вопроса — нет, не гарантируется.<br>
+<br>
+<b>10. Роль equals и hashCode в HashMap?</b><br>
+<br>
+Ответ на этот вопрос следует из ответа на вопрос 7, хотя явно там и не прописан. hashCode позволяет определить корзину для поиска элемента, а equals используется для сравнения ключей элементов в списке внутри корзины и искомого ключа.<br>
+<br>
+<b>11. Максимальное число значений hashCode()?</b><br>
+<br>
+Здесь все довольно просто, достаточно вспомнить сигнатуру метода: int hashCode(). То есть число значений равно диапазону типа int — 2^32 (точного диапазона никогда не спрашивали, хватало такого ответа).<br>
+<br>
+<b>12. Как и когда происходит увеличение количества корзин в HashMap?</b><br>
+<br>
+Вот это довольно тонкий вопрос. Как показал мой мини-опрос, если суть устройства HashMap себе представляют многие более-менее ясно, то этот вопрос часто ставил собеседника в тупик.<br>
+<br>
+Помимо capacity в HashMap есть еще параметр loadFactor, на основании которого, вычисляется предельное количество занятых корзин (capacity*loadFactor). По умолчанию loadFactor = 0,75. По достижению предельного значения, число корзин увеличивается в 2 раза. Для всех хранимых элементов вычисляется новое «местоположение» с учетом нового числа корзин.<br>
+<br>
+<b>13. В каком случае может быть потерян элемент в HashMap?</b><br>
+<br>
+Этот интересный вопрос мне прислал <a href="http://habrahabr.ru/users/leoccoder/" class="user_link">LeoCcoder</a>, у меня подобного не спрашивали и честно признаюсь, после прочтения сходу не смог придумать сценарий для потери элемента. Все опять же оказалось довольно просто, хоть и не так явно: допустим в качестве ключа используется не примитив, а объект с несколькими полями. После добавления элемента в HashMap у объекта, который выступает в качестве ключа, изменяют одно поле, которое участвует в вычислении хеш-кода. В результате при попытке найти данный элемент по исходному ключу, будет происходить обращение к правильной корзине, а вот equals (ведь equals и hashCode должны работать с одним и тем же набором полей) уже не найдет указанный ключ в списке элементов. Тем не менее, даже если equals реализован таким образом, что изменение данного поля объекта не влияет на результат, то после увеличения размера корзин и пересчета хеш-кодов элементов, указанный элемент, с измененным значением поля, с большой долей вероятности попадет совсем в другую корзину и тогда он уже совсем потеряется.<br>
+<br>
+<b>14. Почему нельзя использовать byte[] в качестве ключа в HashMap?</b><br>
+<br>
+Еще один вопрос от <a href="http://habrahabr.ru/users/leoccoder/" class="user_link">LeoCcoder</a>. Как обычно, все оказалось довольно просто — хеш-код массива не зависит от хранимых в нем элементов, а присваивается при создании массива (метод вычисления хеш-кода массива не переопределен и вычисляется по стандартному Object.hashCode() на основании адреса массива). Так же у массивов не переопределен equals и выполняет сравнение указателей. Это приводит к тому, что обратиться к сохраненному с ключом-массивом элементу не получится при использовании другого массива такого же размера и с такими же элементами, доступ можно осуществить лишь в одном случае — при использовании той же самой ссылки на массив, что использовалась для сохранения элемента. За ответ на этот вопрос отдельная благодарность уходит пользователю <a href="http://habrahabr.ru/users/dark_dimius/" class="user_link">dark_dimius</a>.<br>
+<br>
+<b>15. В чем отличия TreeSet и HashSet?</b><br>
+<br>
+Начнем с того, что Set — это множество (так же называют «набором»). Set не допускает хранение двух одинаковых элементов. Формально говоря, термин «множество» и так обозначает совокупность различных элементов, очень важно, что именно различных элементов, так как это главное свойство Set. С учетом такого определения, пояснение про хранение одинаковых элементом не требуется, но в обиходе, понятие «множество» потеряло свой строгий смысл касательно уникальности элементов, входящих в него, поэтому все же уточняйте отдельно данное свойство множества.<br>
+<br>
+TreeSet обеспечивает упорядоченно хранение элементов в виде красно-черного дерева. Сложность выполнения основных операций в TreeSet lg N. HashSet использует для хранения элементов такой же подход, что и HashMap, за тем отличием, что в HashSet в качестве ключа выступает сам элемент, кроме того HashSet (как и HashMap) не поддерживает упорядоченное хранение элементов и обеспечивает временную сложность выполнения операций аналогично HashMap.<br>
+<br>
+<b>16. Устройство TreeSet?</b><br>
+<br>
+Этот вопрос задают вместо вопроса 14 и здесь достаточно краткого ответа, что TreeSet основан на красно-черном дереве. Как правило этого хватает и собеседник сразу переходит к следующему вопросу, у меня ни разу не спрашивали механизм балансировки дерева или другие подробности его реализации.<br>
+<br>
+Для экспресс углубления знаний по красно-черному дереву рекомендую <a href="http://habrahabr.ru/post/66926/">вот эту статью</a>.<br>
+<br>
+<b>17. Что будет, если добавлять элементы в TreeSet по возрастанию?</b><br>
+<br>
+Обычно данный вопрос собеседник предваряет фразой, что в основе TreeSet лежит бинарное дерево и если добавлять элементы по возрастанию, то как они будут распределены по дереву.<br>
+<br>
+Если нет точного представления об устройстве TreeSet, а есть общее понимание о том, что это бинарное дерево (в чем нас дополнительно уверяет собеседник), то данный вопрос может привести к интересному результату: все элементы после доабвления в обычное бинарное дерево будут находится в одной ветви длиной N элементов, что сводит на нет, все преимущества такой структуры, как дерево (фактически получается список). На самом, деле, как выше упоминалось в основе TreeSet лежит красно-черное дерево, которое умеет само себя балансировать. В итоге, TreeSet все равно в каком порядке вы добавляете в него элементы, преимущества этой структуры данных будут сохраняться.<br>
+<br>
+<b>Заключение</b><br>
+<br>
+Надеюсь, рассмотренные вопросы будут полезны хабраюзерам. Прошу так же простить мне возможную некоторую наивность в том, что приведенные выше вопросы требуют такого детального рассмотрения, но в свое время подобная статья мне бы серьезно помогла. Уверен, что в статье присутствуют неточности — прошу в комментарии, кроме того, надеюсь, что более опытные товарищи в комментариях будут активно делится вопросами из своей практики и, если статья будет благосклонно принята хабрасообществом, то вполне возможно продолжение обзора технических вопросов для Java собеседований.<br>
+<br>
+P.S. Немного меркантильного интереса: поиски нового места работы продолжаются и если кто-то из хабраюзеров в процессе поиска Java разработчика в компанию с современным подходом к разработке и интересными задачами или просто может порекомендовать присмотреться к какой-либо подходящей вакансии — я буду благодарен, прошу в личку.</div>
+
+    <div class="share_to_social_networks">
+      <div class="label">Поделиться:</div>
+      <div class="share_buttons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://habrahabr.ru/post/162017/?mobile=no" title="Опубликовать ссылку в Facebook" onclick="window.open(this.href, &#39;Опубликовать ссылку в Facebook&#39;, &#39;width=640,height=436,toolbar=0,status=0&#39;); return false" class="fb"></a>
+        <a href="http://twitter.com/intent/tweet?text=Java%20%D1%81%D0%BE%D0%B1%D0%B5%D1%81%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.%20%D0%9A%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8+http://habrahabr.ru/post/162017/?mobile=no+via+%40habrahabr+%23habr" title="Опубликовать ссылку в Twitter" target="_blank" class="tw"></a>
+        <a href="http://vk.com/share.php?url=http://habrahabr.ru/post/162017/?mobile=no" title="Опубликовать ссылку во ВКонтакте" onclick="window.open(this.href, &#39;Опубликовать ссылку во Вконтакте&#39;, &#39;width=800,height=300&#39;); return false" class="vk"></a>        
+      </div>
+    </div>
+
+        <div class="buttons">
+            <a href="http://m.habrahabr.ru/post/162017/comments/" class="btn btn-wide">Комментарии (306)</a>
+        </div>
+
+    
+
+  </div>
+
+  
+
+  <div class="similar_posts">
+    <div class="title">Похожие публикации</div>
+    <div class="posts">
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/230805/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_similar_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Руководство по собеседованию на вакансию PHP-программиста</h3>
+
+              
+              
+              
+              <div class="flag sandbox">из песочницы</div> 
+              
+              <div class="meta">
+                <span class="author">CoolWolf</span>
+                •
+                <span class="time">23 июля в 12:15</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/230805/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_similar_posts&#39;, &#39;comments&#39;); }" class="comments_count">90</a>
+        </div>
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/203688/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_similar_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Путь к Java Junior Developer</h3>
+
+              
+              
+              
+              <div class="flag sandbox">из песочницы</div> 
+              
+              <div class="meta">
+                <span class="author">gkislin</span>
+                •
+                <span class="time">27 ноября 2013 в 01:16</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/203688/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_similar_posts&#39;, &#39;comments&#39;); }" class="comments_count">13</a>
+        </div>
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/199280/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_similar_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Re: Собеседование разработчика (альтернатива/дополнение)</h3>
+
+              
+              
+              
+              <div class="flag sandbox">из песочницы</div> 
+              
+              <div class="meta">
+                <span class="author">Artem_zin</span>
+                •
+                <span class="time">28 октября 2013 в 14:05</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/199280/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_similar_posts&#39;, &#39;comments&#39;); }" class="comments_count">35</a>
+        </div>
+    </div>
+  </div>
+
+  
+
+  <div class="popular_posts">
+    <div class="title">Популярное за сутки</div>
+    <div class="posts">
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/243095/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Ловцы молний. Необычные эксперименты с грозой</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">kreosan</span>
+                •
+                <span class="time">вчера в 17:11</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/243095/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;comments&#39;); }" class="comments_count">82</a>
+        </div>
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/243247/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">9 основных принципов отзывчивого веб-дизайна</h3>
+
+              <div class="flag translation">перевод</div> 
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">andrew-r</span>
+                •
+                <span class="time">вчера в 14:58</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/243247/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;comments&#39;); }" class="comments_count">14</a>
+        </div>
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/241903/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Подборка интересных CSS рецептов «Голые пятницы #3»</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">Paul_King</span>
+                •
+                <span class="time">вчера в 12:25</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/241903/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;comments&#39;); }" class="comments_count">11</a>
+        </div>
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/240261/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Из дневника призера первой Всероссийской олимпиады по программированию для школьников 1989 года</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">MagisterLudi</span>
+                •
+                <span class="time">вчера в 10:32</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/240261/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;comments&#39;); }" class="comments_count">20</a>
+        </div>
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/243215/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Internet Explorer: Переход к живому Edge-режиму — следующий шаг к тому, чтобы веб просто работал</h3>
+
+              <div class="flag translation">перевод</div> 
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">kichik</span>
+                •
+                <span class="time">вчера в 12:03</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/243215/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;comments&#39;); }" class="comments_count">66</a>
+        </div>
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/243181/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Proxygen — HTTP-фреймворк для С++ от Facebook</h3>
+
+              <div class="flag translation">перевод</div> 
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">tangro</span>
+                •
+                <span class="time">вчера в 12:09</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/243181/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;comments&#39;); }" class="comments_count">9</a>
+        </div>
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/243147/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Приглашаем на конференцию по web-разработке 29 ноября</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">TeamMRG</span>
+                •
+                <span class="time">вчера в 16:46</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/243147/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;comments&#39;); }" class="comments_count">18</a>
+        </div>
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/243229/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Анализ дружеских связей VK с помощью Python. Продолжение</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">STLEON</span>
+                •
+                <span class="time">вчера в 13:41</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/243229/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;comments&#39;); }" class="comments_count">14</a>
+        </div>
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/243243/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Что почитать на досуге: дайджест новостей игровой индустрии за октябрь</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">Darina_PL</span>
+                •
+                <span class="time">вчера в 14:44</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/243243/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;comments&#39;); }" class="comments_count">1</a>
+        </div>
+        <div class="post">
+            <a href="http://m.habrahabr.ru/post/243207/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Python реализация парадигмы event-driven с помощью сопрограмм</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">Alesh</span>
+                •
+                <span class="time">вчера в 14:23</span>
+              </div>
+            </a>
+            <a href="http://m.habrahabr.ru/post/243207/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_popular_posts&#39;, &#39;comments&#39;); }" class="comments_count">14</a>
+        </div>
+    </div>
+  </div>
+
+  
+
+  <div class="geektimes_posts">
+    <div class="title">Лучшее на Geektimes</div>
+    <div class="posts">
+        <div class="post">
+            <a href="http://m.geektimes.ru/post/241460/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Забавные компьютерные ошибки</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">FakeFactFelis</span>
+                •
+                <span class="time">вчера в 17:42</span>
+              </div>
+            </a>
+            <a href="http://m.geektimes.ru/post/241460/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;comments&#39;); }" class="comments_count">15</a>
+        </div>
+        <div class="post">
+            <a href="http://m.geektimes.ru/post/241430/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">У зонда Philae — большие проблемы (UPD — часть проблем удалось решить)</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">marks</span>
+                •
+                <span class="time">вчера в 10:19</span>
+              </div>
+            </a>
+            <a href="http://m.geektimes.ru/post/241430/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;comments&#39;); }" class="comments_count">37</a>
+        </div>
+        <div class="post">
+            <a href="http://m.geektimes.ru/post/241466/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Ремонт печатной платы усилителя сабвуфера</h3>
+
+              <div class="flag translation">перевод</div> 
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">SLY_G</span>
+                •
+                <span class="time">вчера в 18:39</span>
+              </div>
+            </a>
+            <a href="http://m.geektimes.ru/post/241466/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;comments&#39;); }" class="comments_count">6</a>
+        </div>
+        <div class="post">
+            <a href="http://m.geektimes.ru/post/241434/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Почему мы умираем? Сухие цифры</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">ivansychev</span>
+                •
+                <span class="time">вчера в 10:36</span>
+              </div>
+            </a>
+            <a href="http://m.geektimes.ru/post/241434/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;comments&#39;); }" class="comments_count">47</a>
+        </div>
+        <div class="post">
+            <a href="http://m.geektimes.ru/post/241440/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Google повышает размер премии Тьюринга до уровня Нобелевской</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">FakeFactFelis</span>
+                •
+                <span class="time">вчера в 11:19</span>
+              </div>
+            </a>
+            <a href="http://m.geektimes.ru/post/241440/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;comments&#39;); }" class="comments_count">3</a>
+        </div>
+        <div class="post">
+            <a href="http://m.geektimes.ru/post/241436/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">0h h1 – маленькая логическая игра</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">alizar</span>
+                •
+                <span class="time">вчера в 10:38</span>
+              </div>
+            </a>
+            <a href="http://m.geektimes.ru/post/241436/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;comments&#39;); }" class="comments_count">15</a>
+        </div>
+        <div class="post">
+            <a href="http://m.geektimes.ru/post/241474/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Адаптивный антивирус A3 самостоятельно обнаружил и исправил уязвимость ShellShock за 4 минуты</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">SLY_G</span>
+                •
+                <span class="time">вчера в 20:59</span>
+              </div>
+            </a>
+            <a href="http://m.geektimes.ru/post/241474/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;comments&#39;); }" class="comments_count">10</a>
+        </div>
+        <div class="post">
+            <a href="http://m.geektimes.ru/post/241446/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">В России создают «объективную» онлайн-энциклопедию вместо Википедии</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">alizar</span>
+                •
+                <span class="time">вчера в 13:33</span>
+              </div>
+            </a>
+            <a href="http://m.geektimes.ru/post/241446/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;comments&#39;); }" class="comments_count">45</a>
+        </div>
+        <div class="post">
+            <a href="http://m.geektimes.ru/post/241450/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Китайский 3D принтер D-Force, или почему китайское качество лучше американского</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">hVostt</span>
+                •
+                <span class="time">вчера в 13:53</span>
+              </div>
+            </a>
+            <a href="http://m.geektimes.ru/post/241450/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;comments&#39;); }" class="comments_count">21</a>
+        </div>
+        <div class="post">
+            <a href="http://m.geektimes.ru/post/241464/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;post&#39;); }" class="post_inner">
+              <h3 class="title">Сравниваем размеры кометы Чурюмова-Герасименко со звездолетами из фантастических произведений и реальными городами</h3>
+
+              
+              
+              
+              
+
+              <div class="meta">
+                <span class="author">marks</span>
+                •
+                <span class="time">вчера в 18:33</span>
+              </div>
+            </a>
+            <a href="http://m.geektimes.ru/post/241464/comments/" onclick="if (typeof ga === &#39;function&#39;) { ga(&#39;send&#39;, &#39;event&#39;, &#39;tm_block&#39;, &#39;mobile_geektimes_posts&#39;, &#39;comments&#39;); }" class="comments_count">9</a>
+        </div>
+    </div>
+  </div>
+
+  
+  <script>
+  // formatting images
+  (function(){
+
+    var text = document.getElementById('post_text')
+
+    // img wrapper
+    var wrap = function (toWrap) {
+        var wrapper = document.createElement('div');
+        wrapper.setAttribute('class', 'img_wrapper');
+        if (toWrap.nextSibling) {
+            toWrap.parentNode.insertBefore(wrapper, toWrap.nextSibling);
+        } else {
+            toWrap.parentNode.appendChild(wrapper);
+        }
+        return wrapper.appendChild(toWrap);
+    };
+
+    function insertAfter(elem, refElem) {
+      var parent = refElem.parentNode;
+      var next = refElem.nextSibling;
+      if (next) {
+          return parent.insertBefore(elem, next);
+      } else {
+          return parent.appendChild(elem);
+      }
+    }
+
+    // wrap images
+    var images = text.getElementsByTagName('img')
+    var w = window,
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByTagName('body')[0],
+        window_width = w.innerWidth || e.clientWidth || g.clientWidth;
+
+    for(var i=0; i<images.length; i++){ 
+      images[i].onload = function(){
+        var image = this;
+        if(image.naturalWidth > window_width){
+          image.removeAttribute('align'); 
+          var img = wrap(image);
+          var wrapper = img.parentNode;
+          var next = wrapper.nextSibling ? wrapper.nextSibling.nodeName : false;
+          if( next && (next+'').toLowerCase() != 'br'  ){
+            var br = document.createElement('br');
+            br.setAttribute('class', 'my_br');
+            insertAfter(br, wrapper);
+          }
+        }
+      }
+    }
+
+    // iframe resizer
+    var iframes = text.getElementsByTagName('iframe')
+    for(var i=0; i<iframes.length; i++){ 
+      var iframe = iframes[i];
+      var origin_width = iframe.getAttribute('width')
+      var origin_height = iframe.getAttribute('height')
+      var k = origin_width / window_width;
+      var new_width = window_width;
+      var new_height = (origin_height / k ).toFixed();
+      iframe.setAttribute('width', new_width);
+      iframe.setAttribute('height', new_height);
+    }
+
+    // object resizer
+    var objects = text.getElementsByTagName('object')
+    for(var i=0; i<objects.length; i++){ 
+      var object = objects[i];
+      console.log('object', object)
+      var origin_width = object.getAttribute('width')
+      var origin_height = object.getAttribute('height')
+      var k = origin_width / window_width;
+      var new_width = window_width;
+      var new_height = (origin_height / k ).toFixed();
+      object.setAttribute('width', new_width);
+      object.setAttribute('height', new_height);
+      console.log('object params', origin_width, new_width)
+    }
+  }())
+</script>
+
+
+             <div class="banner_footer">
+  <!--  AdRiver code START. Type:AjaxJS Site: mhabr PZ: 0 BN: 2 -->
+  <div id="adriver_banner_1784698212" title=""><a href="http://ad.adriver.ru/cgi-bin/click.cgi?sid=1&ad=470958&bt=21&pid=1716541&bid=3482309&bn=3482309&rnd=1492724253" target="_blank"><img src="./collections_java_files/e729aab3b559450ba6576db57d6bf6ab.jpg" alt=""></a></div>
+  <script type="text/javascript">
+    function show_footer_banner(image_url, click_url){
+      
+      document.getElementById('adriver_banner_1784698212').innerHTML='<a href="'+click_url+'" target="_blank"><img src="'+image_url+'" alt=""/></a>';
+    }
+    new adriver("adriver_banner_1784698212", {sid:182054, bt:52, bn:2});
+  </script>
+</div> 
+		</div>
+		<div id="footer">
+  
+  <div class="links">
+    <a href="http://habrahabr.ru/post/162017/?mobile=no" class="desctop">Полная версия</a>
+    <a href="http://habrahabr.ru/apps/?mobile=no" class="mobile">Приложение</a>
+  </div>
+  <div class="copyright">2006–2014 © TM</div>
+</div>
+	</div>
+	<div id="sidebar_overlay"></div>
+
+<div id="sidebar">
+    <a href="https://habrahabr.ru/auth/login/" class="head">
+      <img src="./collections_java_files/mobile.default_avatar.png" alt="">
+      <span class="username">Вход на сайт</span>
+    </a>    
+
+  <div class="menu">
+    <a href="http://m.habrahabr.ru/posts/" class="posts">Лучшие публикации</a>
+    <a href="http://m.habrahabr.ru/hubs/" class="hubs">Хабы</a>
+    <a href="http://m.habrahabr.ru/companies/" class="companies">Компании</a>
+  </div>
+</div>			
+
+	
+<script type="text/javascript">
+
+    var user_type = "guest";
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-726094-1',  'auto' ); 
+
+  ga('require', 'displayfeatures');
+  ga('set', 'dimension1', user_type); // user type - guest/readonly/habrauser
+  //ga('set', 'dimension2', username); // username
+
+
+  ga('send', 'pageview');
+  
+</script>
+
+
+
+
+
+
+
+
+
+
+    
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter24049213 = new Ya.Metrika({id:24049213,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript>&amp;lt;div&amp;gt;&amp;lt;img src="//mc.yandex.ru/watch/24049213" style="position:absolute; left:-9999px;" alt="" /&amp;gt;&amp;lt;/div&amp;gt;</noscript>
+<!-- /Yandex.Metrika counter -->
+
+	<script type="text/javascript" src="./collections_java_files/global_mobile.js"></script>
+	
+	
+
+
+
+<iframe src="./collections_java_files/2.html" style="width: 10px; height: 10px; position: absolute; top: -10000px; left: -10000px;"></iframe><iframe src="./collections_java_files/2(1).html" style="width: 10px; height: 10px; position: absolute; top: -10000px; left: -10000px;"></iframe><iframe src="./collections_java_files/2(2).html" style="width: 10px; height: 10px; position: absolute; top: -10000px; left: -10000px;"></iframe><iframe src="./collections_java_files/2(3).html" style="width: 10px; height: 10px; position: absolute; top: -10000px; left: -10000px;"></iframe></body></html>
