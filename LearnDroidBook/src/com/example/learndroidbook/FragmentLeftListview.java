@@ -43,15 +43,15 @@ public class FragmentLeftListview extends Fragment {
 			}
 		} );
 		
-		 hideLeftContainerButton = (Button)getActivity().findViewById(R.id.hideButton);
-	        hideLeftContainerButton.setOnClickListener(new OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					listViewCallBack.hideLeft();
-				}
-			});
+//		 hideLeftContainerButton = (Button)getActivity().findViewById(R.id.hideButton);
+//	        hideLeftContainerButton.setOnClickListener(new OnClickListener() {
+//				
+//				@Override
+//				public void onClick(View v) {
+//					// TODO Auto-generated method stub
+//					listViewCallBack.hideLeft();
+//				}
+//			});
 		super.onActivityCreated(savedInstanceState);
 	}
 	@Override

@@ -2,7 +2,6 @@
 <resources>
 
     <string name="app_name">LearnDroidBook</string>
-    <string name="hello_world">Hello world!</string>
     
     <string-array name="java_list_rubrics">
         
@@ -11,7 +10,12 @@
     	<item>Абстрактный класс tag:ABSTRACT_CLASS</item>
     	<item>Вложенный класс tag:INNER_CLASS</item>
     	<item>Коллекции tag:COLLECTIONS_HABR</item>
+    	<item>Коллекции теория tag:COLLECTIONS_THEORY</item>
+    	<item>Коллекции List tag:COLLECTIONS_DEEP</item>
+    	<item>Коллекции Map tag:COLLECTIONS_MAP</item>
     	<item>Ключевые слова tag:keywords</item>
+    	<item>UML tag:UML</item>
+    	
 
     	
     </string-array>
